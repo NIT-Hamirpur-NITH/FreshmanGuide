@@ -14,33 +14,48 @@ First of all, you need to install [Laravel](https://laravel.com) to run this pro
 
 Installation of Laravel
 ------------------------
-To install Laravel, you need to install composer which is utilized by Laravel to manage its dependencies.
-To install composer, download the composer [installer](https://getcomposer.org/installer) from this link:
-https://getcomposer.org/installer
 
-The installation of composer using the below steps is local installation, which means that composer would be available in your working directory only.
+* **First get PHP and all its extension laravel depends on**
 
-To begin with installation of composer, run the installer using:
+> PHP >= 5.5.9, OpenSSL PHP Extension, PDO PHP Extension, Mbstring PHP, Extension, Tokenizer PHP Extension
 
-`php installer`
+On Ubuntu you can get them by using,
+```
+sudo apt-add-repository ppa:ondrej/php
+sudo apt-get update
+sudo apt-get install php php-mysql php-mcrypt php-curl php-mbstring php-gettext php-zip
+```
 
-This will check some settings on your machine and download a file `composer.phar` required for installation.
-Now, to install Laravel using composer, execute the following command on the terminal:
+* **Then install Composer (PHP's dependencies manager). Depending on you OS you can get it from [Donwload Composer](https://getcomposer.org/download/)**
 
-`php composer.phar composer global require "laravel/installer"`
+On Ubuntu the best way to gloabally install composer is,
+```
+php -r "readfile('https://getcomposer.org/installer');" | php
+sudo mv composer.phar /usr/local/bin/composer
+```
+or if you want to use curl,
+```
+curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+```
+Now `composer` will be availabe to you as a command.
 
-Once the Laravel is installed, download this project and change your working directory to FreshmanGuide.<br>
-Execute the following command to install all the dependencies required by the project.
+* **Clone this repository, enter the project's directory and install all dependencies using composer**
+```
+composer install
+```
 
-`php composer.phar install`
+* **Generate the key**
 
-Before running the project, you need to generate an application key for your clone of the project. Rename .env.example file to .env and then generate the key by running the following command:
+Before running the project, you need to generate an application key for your clone of the project. Rename .env.example file to .env and then generate the key by running the following commands:
+```
+cp .env.example .env
+php artisan key:generate
+```
 
-`php artisan key:generate`
+* **Now, you are ready to run the website on your localhost**
+```
+php artisan serve
+```
+Visit [http://localhost:8000](http://localhost:8000) to confirm.
 
-Now, you are ready to run the website on your localhost. Type `php artisan serve` to do that.
-
-
-
-In case of any problems, feel free to share them with us in the gitter chat room.
-Keep contributing!
+> In case of any problems, feel free to share them with us in the gitter chat room. Keep contributing!
