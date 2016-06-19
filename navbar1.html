@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>
+Navbar for Freshmen Guide
+</title>
+<link type="text/css" rel="stylesheet" href="navbar1.css">
+<link rel="stylesheet" href=" http://s.mlcdn.co/animate.css">
+ 
+<script src="https://use.fontawesome.com/47097bcf0c.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>
+		$(function() {
+			var pull 		= $('#Pull');
+				menu 		= $('nav ul');
+				menuHeight	= menu.height();
+
+			$(pull).on('click', function(e) {
+				e.preventDefault();
+				menu.slideToggle();
+			});
+
+			$(window).resize(function(){
+        		var w = $(window).width();
+        		if(w > 320 && menu.is(':hidden')) {
+        			menu.removeAttr('style');
+        		}
+    		});
+		});
+	</script>
+</head>
+<body background="nith.jpg">
+
+<h3 class="animated rotateIn" id="Name" ><em>Freshman Guide</em></h3>
+<nav>
+
+<ul>
+
+<li class="animated rollIn" id="Home"><a id="Homea" href="www.home.aspx" ><i class="fa fa-home" id="Homei" aria-hidden="true"></i> HOME</a></li>
+<li class="animated rollIn" id="About"><a id="Abouta" href="www.Aboutus.aspx"><i class="fa fa-meh-o" id="Abouti" aria-hidden="true"></i>
+
+ABOUT US</a></li>
+<li class="animated rollIn" id="Contact"><a id="Contacta" href="www.Contactus.aspx"><i class="fa fa-phone" id="Contacti" aria-hidden="true"></i>
+CONTACT US</a></li>
+
+</ul>
+
+<a href="#" id="Pull"><i class="fa fa-bars fa-2x" aria-hidden="true" ></i><em>Freshman Guide</em> </a>
+</nav>
+
+ 
+
+</body>
+</html>

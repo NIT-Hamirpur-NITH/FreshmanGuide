@@ -1,0 +1,211 @@
+*{box-sizing: border-box;}
+
+@font-face
+{
+	font-family:champagne_limousinesbold;
+	src: url('champagne_limousinesbold.ttf');
+}
+
+body{
+
+ background-size: cover;
+    background-repeat: no-repeat;
+margin:0;
+}
+#Name
+{float:left;
+margin-left:40px;
+margin-top:10px;
+font-size:40px;
+font-family:champagne_limousinesbold;
+
+color:#0000e6;}
+nav
+ {
+    height: 50px;
+    width: 100%;
+    background-color:transparent;
+  	
+    position: relative;
+    
+}
+
+nav ul {
+    list-style-type: none;
+    margin-top: 14px;
+    padding: 0;
+position:fixed;
+width:100%;
+height:50px;
+margin-left:750px;
+}
+li
+{display:inline-block;
+width:150px; 
+}
+
+#Home
+{
+padding-top:10px;
+margin-right:15px;
+
+}
+
+
+#About{
+
+padding-top:10px;
+
+margin-left:15px;
+}
+#Contact
+{
+padding-top:10px;
+
+margin-left:15px;
+
+}
+li a
+{
+padding:10px 10px 10px 10px;
+text-decoration:none;
+font-size:15px;
+color:black;
+font-family:champagne_limousinesbold;
+border:3px solid #ff1ac6;
+border-radius:5px;
+}
+#Homea
+{padding-right:40px;
+}
+#Homei
+{padding-left:20px;
+padding-right:10px;
+}
+#Abouta
+{padding-right:18px;
+}
+#Abouti
+{padding-left:12px;
+padding-right:10px;
+}
+li a:hover {
+    background-color: #ff1ac6;
+color:white;
+}
+nav a#Pull
+{display:None;
+}
+@media screen and (max-width: 600px) {
+#Name
+{background:rgba(255,255,255,0.5);
+margin-left:15px;
+margin-bottom:20px;
+}
+    nav { 
+        height: auto;
+    }
+    nav ul {
+        width: 100%;
+        display: block;
+        height:auto;
+	margin-left:0px;
+    }
+nav li {
+       width:100%;
+	float:left;
+	position:relative;
+	background:rgba(255,255,255,0.5);
+border-bottom: 1px solid #576979;
+border-right: 1px solid #576979;
+	
+    }
+nav li a
+{ 
+font-size:15px;
+border:1px solid transparent;
+color:black;
+
+}
+
+#Home
+{margin-left:0px;
+margin-top:50px;
+
+}
+#About
+{margin-left:0px;
+margin-top:1px;
+
+}
+#Contact
+{margin-left:0px;
+margin-top:1px;
+}
+#Homei
+{padding-left:10px;
+}
+#Abouti
+{padding-left:10px;
+}
+#Contacti
+{padding-left:10px;
+padding-right:10px;}
+li a:hover {
+    background-color:transparent;
+color:#990000;
+}
+}
+@media only screen and (max-width : 480px) {
+     h3
+{display:none;}
+    nav ul {
+        display: none;
+        height: auto;
+    }
+
+	 nav a#Pull {
+        display: block;
+	position:fixed;
+        background:rgba(255,255,255,0.5);
+        width: 100%;
+        height:50px;
+	
+    }
+nav a#Pull i
+{float:left;
+margin-left:20px;
+margin-right:0px;
+margin-top:5px
+}
+nav a#Pull i.active
+{background-color:blue;
+}
+nav a#Pull em
+{
+
+float:right;
+margin-top:10px;
+padding-right:40px;
+font-size:20px;
+
+font-family:champagne_limousinesbold;
+text-decoration:none;
+color:#0000e6;
+}
+
+}
+@media only screen and (max-width : 320px) {
+	nav h3
+{display:none;}
+	nav li {
+		display: block;
+		float: none;
+		width: 100%;
+	}
+	nav li a {
+		border-bottom: 1px solid #576979;
+	}
+
+}
+
