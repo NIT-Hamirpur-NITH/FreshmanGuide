@@ -23,9 +23,11 @@ Route::get('/about', function() {
 
 // Route for the links page
 Route::get('/links', function() {
-    return view('links');
+    return view('link');
 });
-
+Route::get('/link2.html', function(){
+    return view('link2');
+});
 // Route for the details page
 Route::get('/details', function() {
     // this page will contain details about some specific link so

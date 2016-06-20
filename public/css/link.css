@@ -1,0 +1,48 @@
+a.ln
+{
+    color:black;
+    font-weight:bolder;
+    font-size: 24px;
+    text-decoration: none;
+    padding: 25px;
+    font-family: sans-serif;
+    letter-spacing: 4px;
+    word-spacing: 4px;
+    font-size: 33px;
+}
+.lni
+{
+    margin: 150px 500px;
+}
+body
+{
+    background-color: black;
+    background-image: url("../images/background.png");
+    background-position: top center;
+}
+
+a.ln:visited,
+a.ln:link
+{
+    color: white;
+}
+
+a.ln:hover,
+a.ln:active
+{
+    color: black;
+    background-color: white;
+}
+
+h1
+{
+    color: white;
+}
+
+
+
+/*Image Properties*/
+.image_logo
+{
+    margin-left: 540px;
+}
