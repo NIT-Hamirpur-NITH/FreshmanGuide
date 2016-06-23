@@ -12,6 +12,9 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        //
+        '/image/upload',
+        '/image/rotate',
+        '/image/insert',
+        '/image/onsave',
     ];
 }

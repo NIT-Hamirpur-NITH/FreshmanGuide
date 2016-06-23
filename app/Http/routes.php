@@ -33,3 +33,26 @@ Route::get('/details', function() {
     // right now it's just this.
     return view('details');
 });
+
+
+/**
+ * Facebook authentication routes
+ */
+Route::get('/auth/fb/login', 'SocialAuthController@login');
+Route::get('/auth/fb/redirect', 'SocialAuthController@redirect');
+Route::get('/auth/fb/callback', 'SocialAuthController@callback');
+Route::get('/auth/fb/logout', 'SocialAuthController@logout');
+
+/**
+ * Article addition routes
+ */
+
+Route::get('/add', 'ArticleController@create');
+Route::get('/edit/{searchid}', 'ArticleController@edit');
+Route::post('/save/{searchid}', 'ArticleController@save');
+
+// handling image uplaods
+Route::post('/image/upload', 'ImageController@upload');
+Route::post('/image/rotate', 'ImageController@rotate');
+Route::post('/image/insert', 'ImageController@insert');
+Route::post('/image/onsave', 'ImageController@onsave');

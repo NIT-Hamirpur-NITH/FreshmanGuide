@@ -1,0 +1,1 @@
+<a href="/auth/fb/logout"> Logout </a>

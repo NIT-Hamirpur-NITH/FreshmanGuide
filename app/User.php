@@ -23,4 +23,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Has one social account
+     */
+    public function social()
+    {
+        return $this->hasOne(SocialAccount::class);
+    }
+    
 }
