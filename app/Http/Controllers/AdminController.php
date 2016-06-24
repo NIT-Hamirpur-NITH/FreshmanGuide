@@ -11,7 +11,7 @@ use FreshmanGuide\Exceptions\AdminException;
 class AdminController extends Controller
 {
     
-    public function list(Request $request) {
+    public function lister(Request $request) {
         
         $articles = Article::orderBy('updated_at', 'desc')->get();
         if (!$articles) {
