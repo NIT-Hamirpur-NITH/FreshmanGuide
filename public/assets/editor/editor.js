@@ -77,7 +77,7 @@ $(function() {
         payload.title = $('#title').text().trim();
         console.log(payload);
 
-        $.post(window.appURL + '/save/' + window.location.pathname.split('/')[2], payload)
+        $.post(window.appURL + '/save/' + window.articleID, payload)
             .done(function(data, status) {
                 console.log(data, status);
                 notify(data, 'success');

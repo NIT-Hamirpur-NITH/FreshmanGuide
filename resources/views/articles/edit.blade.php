@@ -67,6 +67,7 @@
 @section('scripts')
 <script>
     window.appURL = "{{ url('/') }}";
+    window.articleID = "{{ $article->searchid }}";
     console.log(appURL);
 </script>
 <script src="{{ url('assets/editor/content-tools.min.js') }}" type="text/javascript"></script>
