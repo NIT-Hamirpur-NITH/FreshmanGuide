@@ -77,7 +77,7 @@ $(function() {
         payload.title = $('#title').text().trim();
         console.log(payload);
 
-        $.post('/save/' + window.location.pathname.split('/')[2], payload)
+        $.post(window.appURL + '/save/' + window.location.pathname.split('/')[2], payload)
             .done(function(data, status) {
                 console.log(data, status);
                 notify(data, 'success');
@@ -175,7 +175,7 @@ $(function() {
             xhr = new XMLHttpRequest();
             xhr.upload.addEventListener('progress', xhrProgress);
             xhr.addEventListener('readystatechange', xhrComplete);
-            xhr.open('POST', '/image/upload', true);
+            xhr.open('POST', window.appURL + '/image/upload', true);
             xhr.send(formData);
         });
 
@@ -228,7 +228,7 @@ $(function() {
             // Make the request
             xhr = new XMLHttpRequest();
             xhr.addEventListener('readystatechange', xhrComplete);
-            xhr.open('POST', '/image/rotate', true);
+            xhr.open('POST', window.appURL + '/image/rotate', true);
             xhr.send(formData);
         }
 
@@ -298,7 +298,7 @@ $(function() {
             // Make the request
             xhr = new XMLHttpRequest();
             xhr.addEventListener('readystatechange', xhrComplete);
-            xhr.open('POST', '/image/insert', true);
+            xhr.open('POST', window.appURL + '/image/insert', true);
             xhr.send(formData);
         });
 
