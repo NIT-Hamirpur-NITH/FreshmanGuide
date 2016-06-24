@@ -29,13 +29,14 @@ _The guidelines for writing the articles will be posted soon._
   11. ~~Discipline Club~~ (Shrayansh)
   12. ~~Pixonoid~~ (Shrayansh)
   13. All clubs of hill'fair
+    1. ~~Music club~~ (DIV)
   14. All clubs of Nimbus
 3. ~~Places of interests in NITH~~ (Kriti)
 4. ~~Everything About Internet( proxy at various places etc.)~~ ) (Utkarsh @clearnote01)
 5. ~~Phone Directory~~ (Satyam)
 6. ~~Rules (for Girls/Boys)~~ (Rashi - for girls, Dhananjay- for boys)
 7. Jargons of NITH
-8. Software list that are pretty useful for freshers
+8. ~~Software list that are pretty useful for freshers~~ (Sagar)
 9. ~~Rules of suppli and why you shouldn't bring mobile into a examination hall~~ (Mumuksh)
 10. ~~Registration process for 2nd semester~~ (Rashi)
 11. Fests and Important events organized in NITH
@@ -49,9 +50,9 @@ _The guidelines for writing the articles will be posted soon._
 13. Treks and Trips you should do in college
 14. ~~Scholarship and Book bank~~ (Mumuksh)
 15. ~~All the things you need to know aboout library~~ (Santosh)
-16. Applications and  softwares made in NITH
+16. ~~Applications and  softwares made in NITH~~ (Sagar)
 17. NITH map with all the imp./not popular places marked
-18. Placements
+18. ~~Placements~~ (Sagar)
 19. ~~Grading System~~ (Santosh)
 20. ~~Telephone Network that you should subscribe to in NITH~~ (Navanshu)
 21. ~~Suitable Laptop that 1st yr can buy.~~ (Raghav Sharma)
@@ -61,6 +62,6 @@ _The guidelines for writing the articles will be posted soon._
 25. ~~Srijan~~ (Varnika)
 26. ~~Sports~~ (Raj)
 27. Rules of NITH (inspired from the awesome article http://guide.wona.co.in/section/inane-campus-rules)
-28. About The Author(inspired from the awesome article http://guide.wona.co.in/wona)
+28. ~~About The Author(inspired from the awesome article http://guide.wona.co.in/wona)~~ (DIV)
 29. FAQ (Satyam, need more here)
 30. Appendix(for all the links)
