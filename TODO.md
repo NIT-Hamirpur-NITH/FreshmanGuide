@@ -54,7 +54,7 @@ _The guidelines for writing the articles will be posted soon._
 18. Placements
 19. ~~Grading System~~ (Santosh)
 20. ~~Telephone Network that you should subscribe to in NITH~~ (Navanshu)
-21. Suitable Laptop that 1st yr can buy.
+21. ~~Suitable Laptop that 1st yr can buy.~~ (Raghav Sharma)
 22. Academic Calander
 23. Famous Personalities
 24. ~~Places of interest in Hamirpur~~ (Mumuksh)
