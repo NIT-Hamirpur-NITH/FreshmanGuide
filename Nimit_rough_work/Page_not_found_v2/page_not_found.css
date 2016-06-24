@@ -1,0 +1,46 @@
+body
+{
+    background-color: #cacaca;
+}
+
+.main
+{
+    font-family: 'Baloo Thambi', cursive;
+}
+h1
+{
+    text-indent: 70px;
+    font-size: 100px;
+    color: #666666;
+    line-height: 10px;
+    margin-top: 100px;
+}
+
+.sonic
+{
+    margin-right: 100px;
+    float: right;
+    height: 400px;
+}
+
+p
+{
+    text-indent: 70px;
+    color: #666666;
+    font-size:50px;
+
+}
+
+.type
+{
+    text-indent:100px;
+    color: #4f4f4f;
+    font-family: 'Baloo Thambi', cursive;
+    font-size: 60px;
+    line-height: 200px;
+}
+#error
+{
+    font-size:80px;
+    color: #ff0087;
+}
