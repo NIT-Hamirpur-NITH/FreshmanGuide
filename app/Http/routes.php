@@ -35,13 +35,9 @@ Route::get('/details', function() {
 });
 
 
-/**
- * Facebook authentication routes
- */
-Route::get('/auth/fb/login', 'SocialAuthController@login');
-Route::get('/auth/fb/redirect', 'SocialAuthController@redirect');
-Route::get('/auth/fb/callback', 'SocialAuthController@callback');
-Route::get('/auth/fb/logout', 'SocialAuthController@logout');
+
+// Read the articles
+Route::get('/read/{slug}', 'ArticleController@read');
 
 /**
  * Article addition routes
@@ -56,3 +52,19 @@ Route::post('/image/upload', 'ImageController@upload');
 Route::post('/image/rotate', 'ImageController@rotate');
 Route::post('/image/insert', 'ImageController@insert');
 Route::post('/image/onsave', 'ImageController@onsave');
+
+
+// login to the website
+Route::get('/___login__', 'Auth\AuthController@getLogin');
+Route::post('/___login__', 'Auth\AuthController@postLogin');
+
+// add the admin things
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
+
+    Route::get('/', 'AdminController@list');
+    Route::get('publish/{searchid}', 'AdminController@publish');
+    Route::get('unpublish/{searchid}', 'AdminController@unpublish');
+    Route::get('delete/{searchid}', 'AdminController@delete');
+    Route::get('logout', 'AdminController@logout');
+});
+

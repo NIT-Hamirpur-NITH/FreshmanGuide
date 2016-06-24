@@ -14,9 +14,9 @@ class ArticleController extends Controller
 
         $id = uniqid('article');
         $article = new Article();
-        $article->title = 'You new title give it a new name';
+        $article->title = 'Temporary Title';
         $article->slug = \Slugify::slugify($article->title. $id);
-        $article->content = '<h1>Sample Content </h1>';
+        $article->content = '';
         $article->published = false;
         $article->new = false;
         $article->searchid = $id;
@@ -42,14 +42,26 @@ class ArticleController extends Controller
 
 
     public function save(Request $request, $searchid) {
-        Log::info('Saving article..');
+        $oldTitle = false;
+
         $article = Article::where('searchid', '=', $searchid)->first();
         if (!$article) {
             return response('There is no article to save', 404);
         }
 
-        $article->content = $request->input('content');
+        if ($request->has('content')) {
+            $article->content = $request->input('content');
+        }
+        if ($request->has('title')) {
+            if ('Temporary Title' === $request->input('title')) {
+                $oldTitle = true;
+            }
+            $article->title = $request->input('title');
+        }
 
+        if (!$oldTitle) {
+            $article->slug = \Slugify::slugify($article->title);
+        }
 
         if ($article->published || $article->new || $article->edited) {
             $article->edited = true;
@@ -62,31 +74,29 @@ class ArticleController extends Controller
         }
 
         if($article->save()) {
-            return response('Article saved', 200);
+            if ($oldTitle) {
+                return response('Article saved, but please change the title', 200);    
+            } else {
+                return response('Article saved', 200);
+            }
         } else {
             return response('Error saving', 500);
         }
 
     }
 
+    
+    public function read(Request $request, $slug) {
 
-    public function delete(Request $request, $slug) {
-
-        $article = Article::where('slug', '=', $slug)->first();
+        $article = Article::where('slug', $slug)->where('published', true)->first();
         if (!$article) {
             return response('There is no article to save', 404);
         }
 
-        $user = $request->user();
-        if ($article->user->id != $user->id) {
-            return response('You can\'t save this. Forbidden', 403);
-        }
+        return view('articles.read', [
+            'article' => $article
+        ]);
 
-        if ($article->delete()) {
-            return redirect('/add');
-        } else {
-            return response('Unable to delete', 200);
-        }
 
     }
 

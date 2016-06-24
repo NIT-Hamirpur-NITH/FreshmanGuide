@@ -1,20 +1,57 @@
 'use strict';
 
-window.addEventListener('load', function() {
+function notify(text, type) {
+    if (!type)  {
+        type = 'alert';
+    }
+    noty({
+        text: text,
+        type: type
+    });
+}
+
+$(function() {
+
+    // setup so that csrf token in passed on
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
 
-    var editor;
-    ContentTools.StylePalette.add([
-        new ContentTools.Style('Author', 'author', ['p'])
-    ]);
-    ContentTools.IMAGE_UPLOADER = imageUploader;
+    // set  up noty
+    $.noty.defaults = {
+        layout: 'top',
+        theme: 'relax', // or 'relax'
+        type: 'alert',
+        dismissQueue: true, // If you want to use queue feature set this true
+        template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
+        animation: {
+            open: {height: 'toggle'}, // or Animate.css class names like: 'animated bounceInLeft'
+            close: {height: 'toggle'}, // or Animate.css class names like: 'animated bounceOutLeft'
+            easing: 'swing',
+            speed: 500 // opening & closing animation speed
+        },
+        timeout: 2000, // delay for closing event. Set false for sticky notifications
+        force: false, // adds notification to the beginning of queue when set to true
+        modal: false,
+        callback: {
+            onShow: function() {},
+            afterShow: function() {},
+            onClose: function() {},
+            afterClose: function() {},
+            onCloseClick: function() {},
+        },
+        maxVisible: 5, // you can set max visible notification for dismissQueue true option,
+        killer: false, // for close all notifications before show
+        closeWith: ['click'], // ['click', 'button', 'hover', 'backdrop'] // backdrop click will close all notifications
+        buttons: false // an array of buttons
+    };
 
+    var editor;
     editor = ContentTools.EditorApp.get();
     editor.init('*[data-editable]', 'data-name');
+    ContentTools.IMAGE_UPLOADER = imageUploader;
 
     editor.addEventListener('saved', function (ev) {
         var name, payload, regions;
@@ -36,16 +73,18 @@ window.addEventListener('load', function() {
             }
         }
 
+        // extract the title and add to the payload
+        payload.title = $('#title').text().trim();
         console.log(payload);
 
         $.post('/save/' + window.location.pathname.split('/')[2], payload)
             .done(function(data, status) {
                 console.log(data, status);
-                new ContentTools.FlashUI('data');
+                notify(data, 'success');
             })
             .fail(function(xhr, status, err) {
                 console.log(status, err);
-                new ContentTools.FlashUI('no');
+                notify('Article can not be saved', 'error');
             }).always(function() {
                 editor.busy(false);
             });
@@ -120,7 +159,7 @@ window.addEventListener('load', function() {
 
                 } else {
                     // The request failed, notify the user
-                    new ContentTools.FlashUI('no');
+                    notify('Cannot upload', 'error');
                 }
             };
 
@@ -174,7 +213,7 @@ window.addEventListener('load', function() {
 
                 } else {
                     // The request failed, notify the user
-                    new ContentTools.FlashUI('no');
+                    notify('Some error rotating', 'error');
                 }
             };
 
@@ -236,7 +275,7 @@ window.addEventListener('load', function() {
 
                 } else {
                     // The request failed, notify the user
-                    new ContentTools.FlashUI('no');
+                    notify('Error saving', 'error');
                 }
             };
 
@@ -261,57 +300,6 @@ window.addEventListener('load', function() {
             xhr.addEventListener('readystatechange', xhrComplete);
             xhr.open('POST', '/image/insert', true);
             xhr.send(formData);
-        });
-
-
-        function getImages() {
-            // Return an object containing image URLs and widths for all regions
-            var descendants, i, images;
-
-            images = {};
-            for (name in editor.regions) {
-                // Search each region for images
-                descendants = editor.regions[name].descendants();
-                for (i = 0; i < descendants.length; i++) {
-                    // Filter out elements that are not images
-                    if (descendants[i].constructor.name !== 'Image') {
-                        continue;
-                    }
-                    images[descendants[i].attr('src')] = descendants[i].size()[0];
-                }
-            }
-
-            return images;
-        }
-
-        editor.addEventListener('save', function (ev) {
-            var regions = ev.detail().regions;
-
-            // Collect the contents of each region into a FormData instance
-            var payload = new FormData();
-            payload.append('page', window.location.pathname);
-            payload.append('images', JSON.stringify(getImages()));
-            payload.append('regions', JSON.stringify(regions));
-
-            // Send the updated content to the server to be saved
-            function onStateChange(ev) {
-                // Check if the request is finished
-                if (ev.target.readyState === 4) {
-                    editor.busy(false);
-                    if (status === '200') {
-                        // Save was successful, notify the user with a flash
-                        new ContentTools.FlashUI('ok');
-                    } else {
-                        // Save failed, notify the user with a flash
-                        new ContentTools.FlashUI('no');
-                    }
-                }
-            }
-
-            xhr = new XMLHttpRequest();
-            xhr.addEventListener('readystatechange', onStateChange);
-            xhr.open('POST', '/image/onsave');
-            xhr.send(payload);
         });
 
     }

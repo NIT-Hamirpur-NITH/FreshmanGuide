@@ -47,3 +47,7 @@
 [data-editable] .text-right {
     text-align: right;
 }
+
+[data-editable] ul {
+    overflow: hidden;
+}
