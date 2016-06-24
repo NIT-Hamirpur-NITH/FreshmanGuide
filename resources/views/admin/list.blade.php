@@ -54,12 +54,12 @@
                         </td>
                         <td>
                             <div class="btn-group" role="group">
-                                <a class="btn btn-primary btn-sm" target="_blank" href="/edit/{{ $article->searchid }}" > Edit </a> 
-                                <a class="btn btn-danger btn-sm" href="/admin/delete/{{ $article->searchid }}" > Delete </a> 
+                                <a class="btn btn-primary btn-sm" target="_blank" href="{{ url('edit/' . $article->searchid) }}" > Edit </a> 
+                                <a class="btn btn-danger btn-sm" href="{{ url('admin/delete/' . $article->searchid) }}" > Delete </a> 
                                 @if ($article->published)
-                                    <a class="btn btn-sm btn-warning" href="/admin/unpublish/{{ $article->searchid }}" > Unpublish </a>
+                                    <a class="btn btn-sm btn-warning" href="{{ url('admin/unpublish/' . $article->searchid) }}" > Unpublish </a>
                                 @else
-                                    <a class="btn btn-sm btn-success" href="/admin/publish/{{ $article->searchid }}" > Publish </a>
+                                    <a class="btn btn-sm btn-success" href="{{ url('admin/publish/' . $article->searchid) }}" > Publish </a>
                                 @endif
                             <div>
                         </td>  
@@ -68,7 +68,7 @@
                         </td>
                         <td>
                             @if ($article->published)
-                                <a class="btn btn-info btn-sm" target="_blank" href="/read/{{ $article->slug }}" title="{{ $article->title }}"> Read </a>
+                                <a class="btn btn-info btn-sm" target="_blank" href="{{ url('read/' . $article->slug) }}" title="{{ $article->title }}"> Read </a>
                             @else
                                 <button disabled='disabled' class="btn btn-info btn-sm" title="{{ $article->title }}"> Read </button>
                             @endif

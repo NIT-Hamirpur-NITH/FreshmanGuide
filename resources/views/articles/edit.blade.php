@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('styles')    
-    <link rel="stylesheet" type="text/css" href="/assets/editor/content-tools.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/editor/editor.css">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/editor/content-tools.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/editor/editor.css') }}">
 @endsection
 
 
@@ -27,7 +27,7 @@
                 <p>
                     Click on the pencil button on the lop left, to start editing
                 </p>
-                <img alt="" class="align-right" data-ce-max-width="600" height="170" src="http://localhost:8000/assets/editor/images/pic13.jpg" width="600">
+                <img alt="" class="align-right" data-ce-max-width="600" height="170" src="http://localhost:8000{{ url('assets/editor/images/pic13.jpg') }}" width="600">
                 <h3>
                     What can I do with it?
                 </h3>
@@ -65,7 +65,7 @@
 @endsection
 
 @section('scripts')
-<script src="/assets/editor/content-tools.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="/assets/libs/noty.min.js"></script>
-<script src="/assets/editor/editor.js" type="text/javascript"></script>
+<script src="{{ url('assets/editor/content-tools.min.js') }}" type="text/javascript"></script>
+<script type="text/javascript" src="{{ url('assets/libs/noty.min.js') }}"></script>
+<script src="{{ url('assets/editor/editor.js') }}" type="text/javascript"></script>
 @endsection
