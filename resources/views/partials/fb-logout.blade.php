@@ -1,0 +1,1 @@
+<a href="{{ url('auth/fb/logout') }}"> Logout </a>

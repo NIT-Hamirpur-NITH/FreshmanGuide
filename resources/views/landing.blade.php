@@ -6,4 +6,5 @@
 
 @section('content')
     Under construction!
+    <a href="{{ url('add') }}" title="Add a new article"> Add article </a>
 @endsection

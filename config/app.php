@@ -155,6 +155,14 @@ return [
         FreshmanGuide\Providers\AuthServiceProvider::class,
         FreshmanGuide\Providers\EventServiceProvider::class,
         FreshmanGuide\Providers\RouteServiceProvider::class,
+        
+        // Soclialite
+        Laravel\Socialite\SocialiteServiceProvider::class,
+
+        // Slugify
+        Cocur\Slugify\Bridge\Laravel\SlugifyServiceProvider::class,
+
+        Intervention\Image\ImageServiceProvider::class,
 
     ],
 
@@ -201,7 +209,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        "Slugify" => "Cocur\Slugify\Bridge\Laravel\SlugifyFacade",
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];

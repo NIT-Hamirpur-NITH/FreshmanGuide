@@ -35,3 +35,38 @@ Route::get('/details', function() {
     // right now it's just this.
     return view('details');
 });
+
+
+
+// Read the articles
+Route::get('/read/{slug}', 'ArticleController@read');
+
+/**
+ * Article addition routes
+ */
+
+Route::get('/add', 'ArticleController@create');
+Route::get('/edit/{searchid}', 'ArticleController@edit');
+Route::post('/save/{searchid}', 'ArticleController@save');
+
+// handling image uplaods
+Route::post('/image/upload', 'ImageController@upload');
+Route::post('/image/rotate', 'ImageController@rotate');
+Route::post('/image/insert', 'ImageController@insert');
+Route::post('/image/onsave', 'ImageController@onsave');
+
+
+// login to the website
+Route::get('/___login__', 'Auth\AuthController@getLogin');
+Route::post('/___login__', 'Auth\AuthController@postLogin');
+
+// add the admin things
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
+
+    Route::get('/', 'AdminController@list');
+    Route::get('publish/{searchid}', 'AdminController@publish');
+    Route::get('unpublish/{searchid}', 'AdminController@unpublish');
+    Route::get('delete/{searchid}', 'AdminController@delete');
+    Route::get('logout', 'AdminController@logout');
+});
+
