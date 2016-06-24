@@ -48,6 +48,12 @@ $(function() {
         buttons: false // an array of buttons
     };
 
+    noty({
+        text: 'Please save the URL in the location bar to edit this article again. Click to dismiss',
+        type: 'success',
+        timeout: false,
+    });
+
     var editor;
     editor = ContentTools.EditorApp.get();
     editor.init('*[data-editable]', 'data-name');

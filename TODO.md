@@ -1,7 +1,7 @@
 #Hello writers
 
 The following articles need to be written for the website. The crossed have already been written or someone has taken responsibily to write them.
-This is noe a complete list, if you fnid anything missing please send a Pull Request here(or if you are not that familiar with github message Akarshit Wal and you can discuss the topic with him).
+This is not a complete list, if you fnid anything missing please send a Pull Request here(or if you are not that familiar with github message Akarshit Wal and you can discuss the topic with him).
 
 _The guidelines for writing the articles will be posted soon._
 
@@ -12,7 +12,7 @@ _The guidelines for writing the articles will be posted soon._
   3. ~~EEE~~ (Abhishek)
   4. Archi
   5. ~~Civil~~ (Varnika)
-  6. Mechanical
+  6. ~~Mechanical~~ (Aman)
   7. Chemical
   8. M. Tech in all departments
 2. Clubs
@@ -35,7 +35,7 @@ _The guidelines for writing the articles will be posted soon._
 4. ~~Everything About Internet( proxy at various places etc.)~~ ) (Utkarsh @clearnote01)
 5. ~~Phone Directory~~ (Satyam)
 6. ~~Rules (for Girls/Boys)~~ (Rashi - for girls, Dhananjay- for boys)
-7. Jargons of NITH
+7. ~~Jargons of NITH~~ (Manish, Sushain)
 8. ~~Software list that are pretty useful for freshers~~ (Sagar)
 9. ~~Rules of suppli and why you shouldn't bring mobile into a examination hall~~ (Mumuksh)
 10. ~~Registration process for 2nd semester~~ (Rashi)
