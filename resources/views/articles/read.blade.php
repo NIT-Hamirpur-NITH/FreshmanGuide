@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('styles')    
-    <link rel="stylesheet" type="text/css" href="/assets/editor/content-tools.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/editor/editor.css">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/editor/content-tools.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/editor/editor.css') }}">
 @endsection
 
 @section('content')
