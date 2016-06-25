@@ -10,7 +10,7 @@ _The guidelines for writing the articles will be posted soon._
   1. CSE
   2. ~~ECE~~ (Satyam)
   3. ~~EEE~~ (Abhishek)
-  4. Archi
+  4. ~~Archi~~ (Antra)
   5. ~~Civil~~ (Varnika)
   6. ~~Mechanical~~ (Aman)
   7. Chemical
@@ -31,6 +31,7 @@ _The guidelines for writing the articles will be posted soon._
   13. All clubs of hill'fair
     1. ~~Music club~~ (DIV)
   14. All clubs of Nimbus
+  15. ~~Hermatica~~ (Tanya)
 3. ~~Places of interests in NITH~~ (Kriti)
 4. ~~Everything About Internet( proxy at various places etc.)~~ ) (Utkarsh @clearnote01)
 5. ~~Phone Directory~~ (Satyam)
@@ -54,14 +55,14 @@ _The guidelines for writing the articles will be posted soon._
 17. NITH map with all the imp./not popular places marked
 18. ~~Placements~~ (Sagar)
 19. ~~Grading System~~ (Santosh)
-20. ~~Telephone Network that you should subscribe to in NITH~~ (Navanshu)
+20. Telephone Network that you should subscribe to in NITH
 21. ~~Suitable Laptop that 1st yr can buy.~~ (Raghav Sharma)
 22. Academic Calander
 23. Famous Personalities
 24. ~~Places of interest in Hamirpur~~ (Mumuksh)
 25. ~~Srijan~~ (Varnika)
 26. ~~Sports~~ (Raj)
-27. Rules of NITH (inspired from the awesome article http://guide.wona.co.in/section/inane-campus-rules)
+27. ~~Rules of NITH (inspired from the awesome article http://guide.wona.co.in/section/inane-campus-rules)~~ (Chandrima)
 28. ~~About The Author(inspired from the awesome article http://guide.wona.co.in/wona)~~ (DIV)
 29. FAQ (Satyam, need more here)
 30. Appendix(for all the links)
