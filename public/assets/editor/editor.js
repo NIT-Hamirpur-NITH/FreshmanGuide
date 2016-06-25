@@ -48,6 +48,12 @@ $(function() {
         buttons: false // an array of buttons
     };
 
+    noty({
+        text: 'Please save the URL in the location bar to edit this article again. Click to dismiss',
+        type: 'success',
+        timeout: false,
+    });
+
     var editor;
     editor = ContentTools.EditorApp.get();
     editor.init('*[data-editable]', 'data-name');
@@ -77,7 +83,7 @@ $(function() {
         payload.title = $('#title').text().trim();
         console.log(payload);
 
-        $.post('/save/' + window.location.pathname.split('/')[2], payload)
+        $.post(window.appURL + '/save/' + window.articleID, payload)
             .done(function(data, status) {
                 console.log(data, status);
                 notify(data, 'success');
@@ -175,7 +181,7 @@ $(function() {
             xhr = new XMLHttpRequest();
             xhr.upload.addEventListener('progress', xhrProgress);
             xhr.addEventListener('readystatechange', xhrComplete);
-            xhr.open('POST', '/image/upload', true);
+            xhr.open('POST', window.appURL + '/image/upload', true);
             xhr.send(formData);
         });
 
@@ -228,7 +234,7 @@ $(function() {
             // Make the request
             xhr = new XMLHttpRequest();
             xhr.addEventListener('readystatechange', xhrComplete);
-            xhr.open('POST', '/image/rotate', true);
+            xhr.open('POST', window.appURL + '/image/rotate', true);
             xhr.send(formData);
         }
 
@@ -298,7 +304,7 @@ $(function() {
             // Make the request
             xhr = new XMLHttpRequest();
             xhr.addEventListener('readystatechange', xhrComplete);
-            xhr.open('POST', '/image/insert', true);
+            xhr.open('POST', window.appURL + '/image/insert', true);
             xhr.send(formData);
         });
 

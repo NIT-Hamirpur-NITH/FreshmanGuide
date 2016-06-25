@@ -19,7 +19,7 @@
             @if ($article->content == '')
 
                 <p class="alert alert-danger">
-                    The above element is used to extract the heading for this article, so please do not delete, however you can edit it. If you add any more element they will be ignored
+                    The above element (title section) is used to extract the heading for this article, so please do not delete, however you can edit it. If you add any more element to the title section they will be ignored
                 </p>
                 <h3>
                     How do I edit?
@@ -27,7 +27,7 @@
                 <p>
                     Click on the pencil button on the lop left, to start editing
                 </p>
-                <img alt="" class="align-right" data-ce-max-width="600" height="170" src="http://localhost:8000{{ url('assets/editor/images/pic13.jpg') }}" width="600">
+                <img alt="" class="align-right" data-ce-max-width="600" height="275" src="{{ url('assets/editor/images/pic13.jpg') }}" width="358">
                 <h3>
                     What can I do with it?
                 </h3>
@@ -42,14 +42,14 @@
                         To change the type of element, use the toolbox
                     </li>
                     <li>
-                        You can very easily upload images, and resize and place them you yours likings
+                        You can very easily upload images, and resize and place them to your liking
                     </li>
                 </ul>
                 <h3>
                     Can I edit this article again?
                 </h3>
                 <p>
-                    Each article has a unique ID, if you know the id, then you can edit the article. You can find the id in the URL, it's the thing starting with 'article'. We will be adding some better functionality later.
+                    Each article has a unique ID, if you know the id, then you can edit the article. Just use the exact same URL in the location bar to edit. We will be adding some better functionality later.
                 </p> 
 
 
@@ -65,6 +65,11 @@
 @endsection
 
 @section('scripts')
+<script>
+    window.appURL = "{{ url('/') }}";
+    window.articleID = "{{ $article->searchid }}";
+    console.log(appURL);
+</script>
 <script src="{{ url('assets/editor/content-tools.min.js') }}" type="text/javascript"></script>
 <script type="text/javascript" src="{{ url('assets/libs/noty.min.js') }}"></script>
 <script src="{{ url('assets/editor/editor.js') }}" type="text/javascript"></script>

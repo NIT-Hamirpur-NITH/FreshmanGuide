@@ -63,7 +63,7 @@ Route::post('/___login__', 'Auth\AuthController@postLogin');
 // add the admin things
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
 
-    Route::get('/', 'AdminController@list');
+    Route::get('/', 'AdminController@lister');
     Route::get('publish/{searchid}', 'AdminController@publish');
     Route::get('unpublish/{searchid}', 'AdminController@unpublish');
     Route::get('delete/{searchid}', 'AdminController@delete');
