@@ -10,17 +10,17 @@ _The guidelines for writing the articles will be posted soon._
   1. CSE
   2. ~~ECE~~ (Satyam)
   3. ~~EEE~~ (Abhishek)
-  4. Archi
+  4. ~~Archi~~ (Antra)
   5. ~~Civil~~ (Varnika)
   6. ~~Mechanical~~ (Aman)
   7. Chemical
   8. M. Tech in all departments
 2. Clubs
-  1. CSEC
-  2. SPEC
+  1. ~~CSEC~~ (Sunakshi)
+  2. ~~SPEC~~ (Deepali)
   3. ~~CSOC~~ (Varnika)
   4. Mechanical's Club
-  5. Archi's Club
+  5. ~~Archi's Club~~ (Sudeep)
   6. ~~Hindi~~(Santosh)
   7. ~~ISTE~~ (Shrayansh)
   8. ~~Finance~~ (Shrayansh)
@@ -28,9 +28,11 @@ _The guidelines for writing the articles will be posted soon._
   10. ~~English Club~~ (Shrayansh)
   11. ~~Discipline Club~~ (Shrayansh)
   12. ~~Pixonoid~~ (Shrayansh)
+  13. ~~Fine Arts~~ (Abhimanyu)
   13. All clubs of hill'fair
     1. ~~Music club~~ (DIV)
   14. All clubs of Nimbus
+  15. ~~Hermatica~~ (Tanya)
 3. ~~Places of interests in NITH~~ (Kriti)
 4. ~~Everything About Internet( proxy at various places etc.)~~ ) (Utkarsh @clearnote01)
 5. ~~Phone Directory~~ (Satyam)
@@ -54,7 +56,7 @@ _The guidelines for writing the articles will be posted soon._
 17. NITH map with all the imp./not popular places marked
 18. ~~Placements~~ (Sagar)
 19. ~~Grading System~~ (Santosh)
-20. ~~Telephone Network that you should subscribe to in NITH~~ (Navanshu)
+20. Telephone Network that you should subscribe to in NITH
 21. ~~Suitable Laptop that 1st yr can buy.~~ (Raghav Sharma)
 22. Academic Calander
 23. Famous Personalities
