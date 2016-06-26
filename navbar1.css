@@ -41,13 +41,12 @@ margin-left:750px;
 }
 li
 {display:inline-block;
-width:150px; 
+width:160px; 
 }
 
 #Home
 {
 padding-top:10px;
-margin-right:15px;
 
 }
 
@@ -96,7 +95,181 @@ color:white;
 nav a#Pull
 {display:None;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1275px) {
+nav ul {
+margin-left:600px;
+}
+}
+@media screen and (max-width: 1110px) {
+nav ul {
+margin-left:450px;
+}
+li a
+{background:rgba(255,255,255,0.5);
+}
+}
+
+@media screen and (max-width: 960px) {
+#Name
+{font-size:25px;
+margin-left:5px;
+}
+
+nav ul {
+margin-left:450px;
+}
+li
+{width:120px;
+}
+li a
+{
+padding:5px 2px 2px 2px;
+font-size:10px;
+background:rgba(255,255,255,0.5);
+}
+#Home
+{
+padding-top:2px;
+
+}
+
+
+#About{
+
+padding-top:5px;
+
+margin-left:0px;
+}
+#Contact
+{
+padding-top:5px;
+
+margin-left:0px;
+}
+#Homea
+{padding-right:10px;
+padding-left:10px;
+}
+#Homei
+{padding-left:10px;
+padding-right:10px;
+}
+#Abouta
+{padding-right:10px;
+}
+#Abouti
+{padding-left:5px;
+padding-right:5px;
+}
+}
+@media screen and (max-width: 810px) {
+#Name
+{font-size:25px;
+margin-left:5px;
+}
+
+nav ul {
+margin-left:330px;
+}
+li
+{width:120px;
+}
+li a
+{
+padding:5px 2px 2px 2px;
+font-size:10px;
+background:rgba(255,255,255,0.5);
+}
+#Home
+{
+padding-top:2px;
+
+}
+
+
+#About{
+
+padding-top:5px;
+
+margin-left:0px;
+}
+#Contact
+{
+padding-top:5px;
+
+margin-left:0px;
+}
+#Homea
+{padding-right:10px;
+padding-left:10px;
+}
+#Homei
+{padding-left:10px;
+padding-right:10px;
+}
+#Abouta
+{padding-right:10px;
+}
+#Abouti
+{padding-left:5px;
+padding-right:5px;
+}
+}
+@media screen and (max-width: 690px) {
+#Name
+{font-size:25px;
+margin-left:5px;
+}
+
+nav ul {
+margin-left:260px;
+}
+li
+{width:120px;
+}
+li a
+{
+padding:5px 2px 2px 2px;
+font-size:10px;
+background:rgba(255,255,255,0.5);
+}
+#Home
+{
+padding-top:2px;
+
+}
+
+
+#About{
+
+padding-top:5px;
+
+margin-left:0px;
+}
+#Contact
+{
+padding-top:5px;
+
+margin-left:0px;
+}
+#Homea
+{padding-right:10px;
+padding-left:10px;
+}
+#Homei
+{padding-left:10px;
+padding-right:10px;
+}
+#Abouta
+{padding-right:10px;
+}
+#Abouti
+{padding-left:5px;
+padding-right:5px;
+}
+}
+
+@media screen and (max-width: 600.00001px) {
 #Name
 {background:rgba(255,255,255,0.5);
 margin-left:15px;
@@ -156,7 +329,7 @@ li a:hover {
 color:#990000;
 }
 }
-@media only screen and (max-width : 480px) {
+@media only screen and (max-width : 600px) {
      h3
 {display:none;}
     nav ul {
@@ -208,4 +381,3 @@ color:#0000e6;
 	}
 
 }
-
