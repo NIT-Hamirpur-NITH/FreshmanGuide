@@ -20,6 +20,7 @@ _The guidelines for writing the articles will be posted soon._
   2. ~~SPEC~~ (Deepali)
   3. ~~CSOC~~ (Varnika)
   4. Mechanical's Club
+  5. ~~OJAS~~ (Kriti)
   5. ~~Archi's Club~~ (Sudeep)
   6. ~~Hindi~~(Santosh)
   7. ~~ISTE~~ (Shrayansh)
@@ -29,6 +30,7 @@ _The guidelines for writing the articles will be posted soon._
   11. ~~Discipline Club~~ (Shrayansh)
   12. ~~Pixonoid~~ (Shrayansh)
   13. ~~Fine Arts~~ (Abhimanyu)
+  14. ~~Deco~~ (Kriti)
   13. All clubs of hill'fair
     1. ~~Music club~~ (DIV)
   14. All clubs of Nimbus
@@ -49,7 +51,7 @@ _The guidelines for writing the articles will be posted soon._
   5. Software Freedom Day
   6. Any other event.
 12. ~~Things to abstain from~~ (Arihant)
-13. Treks and Trips you should do in college
+13. ~~Treks and Trips you should do in college~~ (Devesh, Satyam)
 14. ~~Scholarship and Book bank~~ (Mumuksh)
 15. ~~All the things you need to know aboout library~~ (Santosh)
 16. ~~Applications and  softwares made in NITH~~ (Sagar)
@@ -58,12 +60,12 @@ _The guidelines for writing the articles will be posted soon._
 19. ~~Grading System~~ (Santosh)
 20. Telephone Network that you should subscribe to in NITH
 21. ~~Suitable Laptop that 1st yr can buy.~~ (Raghav Sharma)
-22. Academic Calander
-23. Famous Personalities
+22. ~~Academic Calander~~ (Nishant)
+23. _Famous Personalities_ (LATER)
 24. ~~Places of interest in Hamirpur~~ (Mumuksh)
 25. ~~Srijan~~ (Varnika)
 26. ~~Sports~~ (Raj)
 27. Rules of NITH (inspired from the awesome article http://guide.wona.co.in/section/inane-campus-rules)
 28. ~~About The Author(inspired from the awesome article http://guide.wona.co.in/wona)~~ (DIV)
-29. FAQ (Satyam, need more here)
+29. ~~FAQ~~ (Satyam, need more here)
 30. Appendix(for all the links)
