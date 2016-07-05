@@ -47,9 +47,22 @@ class Handler extends ExceptionHandler
     {
 
         if ($e instanceof AdminException) {
-            return redirect('/admin')->with([
-                'error' => $e->getMessage()
-            ]);
+            if ($request->ajax()) {
+                return response()->json([
+                    'success' => false,
+                    'error' => $e->getMessage(),
+                ]);
+            } else {
+                if ($e->getCode() == 0) {
+                    return view('errors.fresh', [
+                        'message' => $e->getMessage(),
+                    ]);
+                } else {
+                    return back()->with([
+                        'error' => $e->getMessage(),
+                    ]);
+                }
+            }
         }
 
         return parent::render($request, $e);

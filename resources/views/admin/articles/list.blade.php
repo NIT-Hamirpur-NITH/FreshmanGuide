@@ -4,6 +4,8 @@
 
     <div class="container">
 
+        <a class="btn btn-primary" href="{{ url('/add') }}" target="_blank"> Add Articles </a>
+
         @if (session('error'))
         <div class="alert alert-error">
             {{ session('error') }}
@@ -16,7 +18,7 @@
         </div>
         @endif
 
-        @if ($articles->isEmpty())
+        @if (count($articles) == 0)
             There seems to be no articles
         @else
         <table class="table table-striped table-bordered">
@@ -27,6 +29,7 @@
                     <th>Heading</th>
                     <th>SearchId</th>
                     <th>Status</th>
+                    <th>Section</th>
                     <th>Actions</th>
                     <th>Updated</th>
                     <th>Read</th>
@@ -50,6 +53,14 @@
                             @endif
                             @if (!$article->new && !$article->edited && !$article->published)
                                 <span class="label label-default">Editing</span>
+                            @endif
+                        </td>
+                        <td>
+                            @if ($article->getSection()) 
+                                {{ $article->getSection()->name }}
+                                <a class="btn btn-primary" href="{{ url('admin/categorize/') . '/' . $article->searchid }}" > Change </a>
+                            @else
+                                <a class="btn btn-primary" href="{{ url('admin/categorize/') . '/' . $article->searchid }}" > Categorize </a>
                             @endif
                         </td>
                         <td>
@@ -77,7 +88,10 @@
                 @endforeach
             </tbody>
         </table>
+
+        {{ $articles->links() }}
         @endif
+
     </div>
 
 @endsection

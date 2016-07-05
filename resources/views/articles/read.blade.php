@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('styles')    
     <link rel="stylesheet" type="text/css" href="{{ url('assets/editor/content-tools.min.css') }}">
@@ -9,8 +9,11 @@
 
     <div class="container">
         
-        <div data-editable data-name='heading' class="jumbotron">
-            <h2 id="title">{{ $article->title }}</h2>
+        <section id="article">
+            
+        
+        <div id='article-title'>
+            <h2> <i class="fa fa-chevron-circle-right"></i> &nbsp; {{ $article->title }}</h2>
         </div> 
 
         <div data-editable data-name='content'>
@@ -23,6 +26,8 @@
 
             @endif    
         </div>
+
+        </section>
 
     </div>   
 

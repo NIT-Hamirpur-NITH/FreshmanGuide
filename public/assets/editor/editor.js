@@ -10,6 +10,33 @@ function notify(text, type) {
     });
 }
 
+
+function changeTitle(event) {
+
+    vex.dialog.prompt({
+      message: 'Enter new title',
+      placeholder: 'My new and awesome title',
+      callback: function(value) {
+        if (!value) {
+            return notify('No title given, nothing will happen', 'info');
+        }
+        $.post(window.appURL + '/title/' + window.articleID, {title: value})
+        .done(function(data) {
+            var type = data.success ? 'success' : 'error';
+            var text = data.success ? data.message : data.error;
+            if (data.success) {
+                $('#title').html(value);
+            }
+            notify(text, type);
+        })
+        .fail(function(xhr) {
+            notify('Unable to save new title, please forgive!', 'error'); 
+        });
+      }
+    });
+
+}
+
 $(function() {
 
     // setup so that csrf token in passed on
@@ -21,7 +48,7 @@ $(function() {
 
     // set  up noty
     $.noty.defaults = {
-        layout: 'top',
+        layout: 'topRight',
         theme: 'relax', // or 'relax'
         type: 'alert',
         dismissQueue: true, // If you want to use queue feature set this true
@@ -47,6 +74,12 @@ $(function() {
         closeWith: ['click'], // ['click', 'button', 'hover', 'backdrop'] // backdrop click will close all notifications
         buttons: false // an array of buttons
     };
+
+    // set up vex
+    vex.defaultOptions.className = 'vex-theme-os';
+
+    // change title
+    $('#editTitle').click(changeTitle);
 
     noty({
         text: 'Please save the URL in the location bar to edit this article again. Click to dismiss',
