@@ -24,6 +24,7 @@ On Ubuntu you can get them by using,
 sudo apt-add-repository ppa:ondrej/php
 sudo apt-get update
 sudo apt-get install php php-mysql php-mcrypt php-curl php-mbstring php-gettext php-zip
+sudo apt install mysql-server mysql-client
 ```
 
 * **Then install Composer (PHP's dependencies manager). Depending on you OS you can get it from [Donwload Composer](https://getcomposer.org/download/)**
@@ -44,12 +45,30 @@ Now `composer` will be availabe to you as a command.
 composer install
 ```
 
+* **Make a `mysql` database**
+```
+ mysql -u <username> -p
+ create database database_name;
+ Ctrl + C
+```
+
 * **Generate the key**
 
 Before running the project, you need to generate an application key for your clone of the project. Rename .env.example file to .env and then generate the key by running the following commands:
 ```
 cp .env.example .env
 php artisan key:generate
+```
+Open the file in any editor and make the changes in the following lines
+
+```
+DB_DATABASE=<database_name>
+DB_USERNAME=<username>
+DB_PASSWORD=<password>
+```
+* **Migrate the database**
+```
+php artisan migrate
 ```
 
 * **Now, you are ready to run the website on your localhost**

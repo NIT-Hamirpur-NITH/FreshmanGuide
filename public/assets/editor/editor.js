@@ -75,11 +75,14 @@ $(function() {
         buttons: false // an array of buttons
     };
 
+
     // set up vex
     vex.defaultOptions.className = 'vex-theme-os';
 
     // change title
     $('#editTitle').click(changeTitle);
+
+
 
     noty({
         text: 'Please save the URL in the location bar to edit this article again. Click to dismiss',

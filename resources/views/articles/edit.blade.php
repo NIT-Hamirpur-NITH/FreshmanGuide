@@ -21,6 +21,7 @@
 
         <div data-editable data-name='content'>
 
+
                 @if ($article->content == '')
 
                     <h2>
