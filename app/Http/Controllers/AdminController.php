@@ -34,7 +34,7 @@ class AdminController extends Controller
 
     public function articles(Request $request) {
 
-        $articles = Article::orderBy('updated_at', 'desc')->paginate(2);
+        $articles = Article::orderBy('updated_at', 'desc')->paginate(10);
         if (!$articles) {
             throw new AdminException('Unable to fetch the articles', 0);
         }
