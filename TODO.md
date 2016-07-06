@@ -3,11 +3,11 @@
 The following articles need to be written for the website. The crossed have already been written or someone has taken responsibily to write them.
 This is not a complete list, if you fnid anything missing please send a Pull Request here(or if you are not that familiar with github message Akarshit Wal and you can discuss the topic with him).
 
-_The guidelines for writing the articles will be posted soon._
+The guidelines for writing the articles are [here](http://glug.nith.ac.in/freshman/read/the-path-to-follow)
 
 0. ~~Introduction (We need this to be really good)~~ (Varnika)
 1. Departments
-  1. CSE
+  1. ~~CSE~~ (Payal)
   2. ~~ECE~~ (Satyam)
   3. ~~EEE~~ (Abhishek)
   4. ~~Archi~~ (Antra)
