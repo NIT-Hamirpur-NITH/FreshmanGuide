@@ -43,8 +43,7 @@ Route::get('/details', function() {
     return view('details');
 });
 
-
-
+    
 // Read the articles
 Route::get('/read/{slug}', 'ArticleController@read');
 

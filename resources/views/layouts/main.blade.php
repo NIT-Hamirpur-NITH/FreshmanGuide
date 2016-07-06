@@ -11,6 +11,8 @@
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
         @yield('stylesBefore')
         <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+        <link rel="stylesheet" href="{{ url('assets/libs/vex/vex.css') }}" />
+        <link rel="stylesheet" href="{{ url('assets/libs/vex/vex-theme-os.css') }}" />
         <link rel="stylesheet" href="{{ url('assets/strongly/css/main.css') }}" />
         <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
         <style>
@@ -98,7 +100,7 @@
                                 <li> <a href="{{ url('sections') }}" class="icon fa-bar-chart-o"><span>Sections</span></a> </li>
                                 <li><a class="icon fa-cog" href="{{ url('contact') }}"><span>Contact Us</span></a></li>
                                 <li><a class="icon fa-cog" href="{{ url('read/the-path-to-follow') }}"><span>Guidelines</span></a></li>
-                                <li><a class="icon fa-pencil" href="{{ url('add') }}"><span>Add</span></a></li>
+                                <li><a class="icon fa-pencil" id="add-article" href="javascript:void(0)"><span>Add</span></a></li>
                             </ul>
                         </nav>
                     </div>
@@ -118,12 +120,18 @@
         </div>
 
         <!-- Scripts -->
+        <script>
+            window.appURL = "{{ url('/') }}";
+            console.log(appURL);
+        </script>
         <script src="{{ url('assets/strongly/js/jquery.min.js') }}"></script>
         <script src="{{ url('assets/strongly/js/jquery.dropotron.min.js') }}"></script>
         <script src="{{ url('assets/strongly/js/skel.min.js') }}"></script>
         <script src="{{ url('assets/strongly/js/skel-viewport.min.js') }}"></script>
         <script src="{{ url('assets/strongly/js/util.js') }}"></script>
         <!--[if lte IE 8]><script src="{{ url('assets/strongly/js/ie/respond.min.js') }}"></script><![endif]-->
+        <script type="text/javascript" src="{{ url('assets/libs/noty.min.js') }}"></script>
+        <script src="{{ url('assets/libs/vex/vex.combined.min.js') }}"></script>
         <script src="{{ url('assets/strongly/js/main.js') }}"></script>
         @yield('scripts')
     </body>

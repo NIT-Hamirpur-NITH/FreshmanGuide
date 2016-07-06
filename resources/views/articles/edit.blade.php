@@ -2,8 +2,6 @@
 
 @section('styles')    
     <link rel="stylesheet" type="text/css" href="{{ url('assets/editor/content-tools.min.css') }}">
-    <link rel="stylesheet" href="{{ url('assets/libs/vex/vex.css') }}" />
-    <link rel="stylesheet" href="{{ url('assets/libs/vex/vex-theme-os.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url('assets/editor/editor.css') }}">
 @endsection
 
@@ -67,6 +65,7 @@
 
 @endsection
 
+
 @section('scripts')
 <script>
     window.appURL = "{{ url('/') }}";
@@ -74,7 +73,5 @@
     console.log(appURL);
 </script>
 <script src="{{ url('assets/editor/content-tools.min.js') }}" type="text/javascript"></script>
-<script type="text/javascript" src="{{ url('assets/libs/noty.min.js') }}"></script>
-<script src="{{ url('assets/libs/vex/vex.combined.min.js') }}"></script>
 <script src="{{ url('assets/editor/editor.js') }}" type="text/javascript"></script>
 @endsection

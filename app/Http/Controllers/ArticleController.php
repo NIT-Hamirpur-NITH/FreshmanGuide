@@ -12,25 +12,29 @@ class ArticleController extends Controller
 {
     public function add(Request $request) {
 
-        return view('articles.add');
+        return view('articles.add', [
+            'title' => 'Add Article',
+            'bodyClass' => 'no-sidebar',
+        ]);
     }
 
     public function create(Request $request) {
         if ($request->input('title') == '') {
-
-            return back()->with([
+            return reponse()->json([
+                'success' => false,
                 'error' => 'Please enter a title',
             ]);
-
         } 
 
         $slug = \Slugify::slugify($request->input('title'));
         $article = Article::where('slug', $slug)->first();
 
-        if ($article)
-        return back()->with([
-            'error' => 'This title in not available',
-        ]);
+        if ($article) {
+            return response()->json([
+                'success' => false,
+                'error' => 'This title is not available',
+            ]);
+        }
 
         $article = new Article();
         $id = uniqid('article');
@@ -41,6 +45,19 @@ class ArticleController extends Controller
         $article->new = true;
         $article->searchid = $id;
         $article->edited = false;
+
+        if ($article->save()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Article created',
+                'searchId' => $article->searchid, 
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'error' => 'Unable to create, something bad happened',
+            ]);
+        }
         $article->save();
 
         return redirect()->to('/edit/' . $article->searchid);
