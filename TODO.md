@@ -39,6 +39,7 @@ The guidelines for writing the articles are [here](http://glug.nith.ac.in/freshm
 4. ~~Everything About Internet( proxy at various places etc.)~~ ) (Utkarsh @clearnote01)
 5. ~~Phone Directory~~ (Satyam)
 6. ~~Rules (for Girls/Boys)~~ (Rashi - for girls, Dhananjay- for boys)
+7. ~~Previous year papers~~ (Rashi)
 7. ~~Jargons of NITH~~ (Manish, Sushain)
 8. ~~Software list that are pretty useful for freshers~~ (Sagar)
 9. ~~Rules of suppli and why you shouldn't bring mobile into a examination hall~~ (Mumuksh)
@@ -58,7 +59,7 @@ The guidelines for writing the articles are [here](http://glug.nith.ac.in/freshm
 17. NITH map with all the imp./not popular places marked
 18. ~~Placements~~ (Sagar)
 19. ~~Grading System~~ (Santosh)
-20. Telephone Network that you should subscribe to in NITH
+20. ~~Telephone Network that you should subscribe to in NITH~~ (Navanshu)
 21. ~~Suitable Laptop that 1st yr can buy.~~ (Raghav Sharma)
 22. ~~Academic Calander~~ (Nishant)
 23. _Famous Personalities_ (LATER)
