@@ -147,9 +147,10 @@ body {
 }
 
 #article > [data-editable] ul {
+    overflow: visible;
     list-style-type: disc;
-    list-style-position: inside;
-    margin-bottom: 0.5em;
+    list-style-position: outside;
+    margin-left: 2em
 }
 
 #article > [data-editable] li {
@@ -157,23 +158,21 @@ body {
 }
 
 #article > [data-editable] ol {
+    overflow: visible;
     list-style-type: decimal;
-    list-style-position: inside;
+    list-style-position: outside;
+    margin-left: 2em
 }
 
 #article > [data-editable] li ol {
-    margin-left: 2em;
+    overflow: visible;
     list-style-type: lower-roman;
-    list-style-position: inside;
-    margin-bottom: 0.2em;
-}
-
-#article img {
-    margin: 1em;
+    list-style-position: outside;
+    margin-bottom: 0.3em;
 }
 
 #article p {
-    margin-bottom: 0.2em;
+    margin-bottom: 0.7em;
 }
 
 #article > [data-editable] table th {
