@@ -147,21 +147,25 @@ body {
 }
 
 #article > [data-editable] ul {
-    overflow: visible;
     list-style-type: disc;
     list-style-position: outside;
-    margin-left: 2em
 }
 
 #article > [data-editable] li {
     margin: 0.2em 0em;
+    position: relative;
+    left: 2em;
+    padding-right: 1em;
+}
+
+#article > [data-editable] li ul {
+    margin-bottom: 0.3em;
 }
 
 #article > [data-editable] ol {
     overflow: visible;
     list-style-type: decimal;
     list-style-position: outside;
-    margin-left: 2em
 }
 
 #article > [data-editable] li ol {
