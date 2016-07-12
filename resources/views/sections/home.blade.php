@@ -11,6 +11,7 @@
             color: #c24923;
             text-shadow: 0.05em 0.075em 0 #f46b45;
         }
+
     </style>
 @endsection
 

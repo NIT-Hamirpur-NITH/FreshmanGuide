@@ -36,98 +36,49 @@ function handleAction(url, method, data, cb, fmessage) {
 
 $(function() {
 
+    $('#articles-table').on( 'draw.dt', function () {
+        $('.delete').click(function(event) {
+            event.preventDefault();
+            var $element = $(this);
+            console.log($element.attr('data-title'), $element.attr('data-id'));
+            vex.dialog.confirm({
+                message: 'Are you sure, you want to delete the article <strong>' + $element.attr('data-title') + '</strong> ?',
+                callback: function(value) {
+                    if (value) {
+                        handleAction($element.attr('href'), 'GET', null, function() {
+                            window.table.draw('page');
+                        }, 'Unable to delte ' + $element.attr('title'));    
+                    } else {
+                        notify('Nothing will happen', 'default');
+                    }
+                }
+            });
+        });
+
+        $('.publish').click(function(event) {
+            event.preventDefault();
+            var $element = $(this);
+            handleAction($element.attr('href'), 'GET', null, function() {
+                window.table.draw('page');
+            }, 'Unable to publish ' + $element.attr('title'));    
+        });
+
+        $('.unpublish').click(function(event) {
+            event.preventDefault();
+            var $element = $(this);
+            handleAction($element.attr('href'), 'GET', null, function() {
+                window.table.draw('page');
+            }, 'Unable to unpublish ' + $element.attr('title'));    
+        });
+
+    });
+
     $.noty.defaults.theme = 'relax';
     $.noty.defaults.timeout = 2000;
     $.noty.defaults.layout = 'topRight';
 
+    vex.defaultOptions.className = 'vex-theme-os';
 
-    $('#articles').bootstrapTable({
-        url: window.appURL + '/admin/articles',
-        responseHandler: function _response_handler(res) {
-            if (res.success) {
-                console.log(res);
-                return res.data;
-            } else {
-                console.log(res.error);
-                return [];
-            }
-        },
-        columns: [{
-            field: 'id',
-            title: 'ID',
-        }, {
-            field: 'title',
-            title: 'Title',
-        }, {
-            field: 'status',
-            title: 'Status',
-            formatter: function _status_formatter(value) {
-                return '<span class="label label-primary">' + value + '</span>';
-            }
-        }, {
-            title: 'Actions',
-            formatter: function _action_formatter(value, row) {
-                return [
-                    '<a class="edit ml10" href="' +  window.appURL + '/edit/' + row.searchid + '" title="Edit" target="_blank">',
-                    '<i class="glyphicon glyphicon-edit"></i>',
-                    '</a>',
-                    '<a class="read ml10" href="' +  window.appURL + '/read/' + row.slug + '" title="Read" target="_blank">',
-                    '<i class="glyphicon glyphicon-blackboard"></i>',
-                    '</a>',
-                    '<a class="remove ml10" href="javascript:void(0)" title="Remove">',
-                    '<i class="glyphicon glyphicon-remove"></i>',
-                    '</a>'
-                ].join('');
-            },
-            events: {
-                'click .remove' : function _action_reomve_events(event, value, row) {
-                    handleAction(window.appURL + '/admin/delete/' + row.searchid, 'GET', null, function() {
-                        $('#articles').bootstrapTable('remove', {
-                            field: 'searchid',
-                            values: [row.searchid],
-                        });
-                    }, 'Unable to delete the article');
-                },
-            }
-        }, {
-            field: 'published',
-            title: 'Published',
-            formatter: function _published_formatter(value) {
-                if (value) {
-                    return [
-                        '<a class="unpublish btn btn-warning btn-sm ml10" href="javascript:void(0)" title="Edit" target="_blank">',
-                        'Unpublish',
-                        '</a>'
-                    ].join('');
-                } else {
-                    return [
-                        '<a class="publish btn btn-success btn-sm ml10" href="javascript:void(0)" title="Edit" target="_blank">',
-                        'Publish',
-                        '</a>'
-                    ].join('');
-                }
-            },
-            events: {
-                'click .unpublish' : function _action_unpublish(event, value, row, index) {
-                    handleAction(window.appURL + '/admin/unpublish/' + row.searchid, 'GET', null, function() {
-                        row.published = false;
-                        $('#articles').bootstrapTable('updateRow', {
-                            index: index,
-                            row: row,
-                        });
-                    }, 'Unable to unpublish the article');
-                },
-                'click .publish' : function _action_publish(event, value, row, index) {
-                    handleAction(window.appURL + '/admin/publish/' + row.searchid, 'GET', null, function() {
-                        row.published = true;
-                        $('#articles').bootstrapTable('updateRow', {
-                            index: index,
-                            row: row,
-                        });
-                    }, 'Unable to publish the article');
-                }
-            }
-        }]
-    });
+    
 
 });

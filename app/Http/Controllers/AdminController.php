@@ -8,10 +8,15 @@ use FreshmanGuide\Http\Requests;
 use FreshmanGuide\Article;
 use FreshmanGuide\Section;
 use FreshmanGuide\Exceptions\AdminException;
+use Yajra\Datatables\Datatables;
 use Image;
 
 class AdminController extends Controller
 {
+
+    public function getLogin() {
+        return view('admin.login');
+    }
     
     public function sendResponse(Request $request, $data, $view = null) {
         if ($request->ajax()) {
@@ -33,20 +38,47 @@ class AdminController extends Controller
     }
 
     public function articles(Request $request) {
+        $sections = Section::select('id', 'name')->get();
 
-        $articles = Article::orderBy('updated_at', 'desc')->paginate(10);
-        if (!$articles) {
-            throw new AdminException('Unable to fetch the articles', 0);
-        }
+        return view('admin.articles', [
+            'sections' => $sections
+        ]);
 
-        // public function responsehandler
+    }
 
-        // serialize articles
-        return $this->sendResponse($request, [
-            'success' => true,
-            'articles' => $articles,
-        ], 'admin.articles.list');
+    public function articlesData(Request $request) {
+        $articles = Article::select(['id', 'title', 'searchid', 'updated_at', 'published'])->orderBy('updated_at', 'desc');
 
+        return Datatables::of($articles)
+            ->addColumn('action', function($article) {
+                $html = '<div class="btn-group" role="group" >' .
+                    '<a href="' . url('edit') . '/' . $article->searchid . '" class="btn btn-sm btn-primary" target="_blank" > Edit </a>' . 
+                    '<a href="' . url('admin/delete') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="delete btn btn-sm btn-danger" target="_blank" data-title="' . $article->title . '"> Delete </a>';
+
+                if ($article->published) {
+                    $html .= '<a href="' . url('admin/unpublish') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="unpublish btn btn-sm btn-warning" target="_blank" data-title="' . $article->title . '"> Unpublish </a>';
+                } else {
+                    $html .= '<a href="' . url('admin/publish') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="publish btn btn-sm btn-success" target="_blank" data-title="' . $article->title . '"> Publish </a>';
+                }
+
+                return $html . '</div>';
+                
+            })
+            ->editColumn('published', function($article) {
+                return $article->status;
+            })
+            ->editColumn('section', function($article) {
+                if (!$article->section) {
+                    return '<a href="' . url('admin/categorize') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="section btn btn-sm btn-success" target="_blank" data-title="' . $article->title . '"> Categorize </a>';
+                } else {
+                    return $article->section->name . '<a href="' . url('admin/categorize') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="section btn btn-sm btn-success" target="_blank" data-title="' . $article->title . '"> Change </a>';
+                }
+            })
+            ->editColumn('updated_at', function($article) {
+                return \Carbon\Carbon::createFromTimeStamp(strtotime($article->updated_at))->diffForHumans();
+            })
+            ->removeColumn('updated_at')
+            ->make(true);
     }
 
 

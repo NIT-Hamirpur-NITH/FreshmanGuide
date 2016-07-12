@@ -65,7 +65,7 @@ Route::post('/image/onsave', 'ImageController@onsave');
 
 
 // login to the website
-Route::get('/___login__', 'Auth\AuthController@getLogin');
+Route::get('/___login__', 'AdminController@getLogin');
 Route::post('/___login__', 'Auth\AuthController@postLogin');
 
 // add the admin things
@@ -73,6 +73,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
 
     Route::get('/', 'AdminController@home');
     Route::get('/articles', 'AdminController@articles');
+    Route::get('/articles-data', 'AdminController@articlesData');
     Route::get('/publish/{searchid}', 'AdminController@publish');
     Route::get('/unpublish/{searchid}', 'AdminController@unpublish');
     Route::get('/delete/{searchid}', 'AdminController@delete');

@@ -1,0 +1,2 @@
+<script src="{{ url ('assets/bower/datatables/media/js/jquery.dataTables.min.js') }}" type="text/javascript"></script>
+<script src="{{ url ('assets/bower/datatables/media/js/dataTables.bootstrap.min.js') }}" type="text/javascript"></script>

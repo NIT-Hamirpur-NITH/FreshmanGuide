@@ -8,7 +8,7 @@
         <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900,900italic,300italic,300' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic,300italic,300,900,900italic' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Oleo+Script:400,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link href="{{ url('assets/bower/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
         @yield('stylesBefore')
         <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
         <link rel="stylesheet" href="{{ url('assets/libs/vex/vex.css') }}" />
@@ -80,33 +80,17 @@
 
 
         </style>
+        <link rel="stylesheet" type="text/css" href="{{ url('assets/main/nav.css') }}">
         @yield('styles')
     </head>
     <body class="{{ $bodyClass }}">
         <div id="page-wrapper">
 
-            <!-- Header -->
-                <div id="header-wrapper">
-                    <div id="header" class="container">
+            @include('main.partials.nav')
 
-                        <!-- Logo -->
-                        <h1 id="logo"><a href="{{ url('/') }}">Freshman Guide</a></h1>
-                        <p> Add Something Here </p>
-                        
-                        <!-- Nav -->
-                        <nav id="nav">
-                            <ul>
-                                <li><a class="icon fa-home" href="{{ url('/') }}"><span>Home</span></a></li>
-                                <li> <a href="{{ url('sections') }}" class="icon fa-bar-chart-o"><span>Sections</span></a> </li>
-                                <li><a class="icon fa-cog" href="{{ url('contact') }}"><span>Contact Us</span></a></li>
-                                <li><a class="icon fa-cog" href="{{ url('read/the-path-to-follow') }}"><span>Guidelines</span></a></li>
-                                <li><a class="icon fa-pencil" id="add-article" href="javascript:void(0)"><span>Add</span></a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-
-            @yield('content')
+            <div class="content">
+                @yield('content')
+            </div>
             
             <!-- Footer -->
             <div id="footer-wrapper">
@@ -130,9 +114,32 @@
         <script src="{{ url('assets/strongly/js/skel-viewport.min.js') }}"></script>
         <script src="{{ url('assets/strongly/js/util.js') }}"></script>
         <!--[if lte IE 8]><script src="{{ url('assets/strongly/js/ie/respond.min.js') }}"></script><![endif]-->
-        <script type="text/javascript" src="{{ url('assets/libs/noty.min.js') }}"></script>
+        <script src="{{ url('assets/libs/noty.min.js') }}"></script>
         <script src="{{ url('assets/libs/vex/vex.combined.min.js') }}"></script>
         <script src="{{ url('assets/strongly/js/main.js') }}"></script>
+        <script>
+            $(function() {
+                var $window = $(window);
+                var scrolled = false;
+
+                $window.on('scroll', function() {
+                    scrolled = true;
+                });
+
+                setInterval(function() {
+                    if (scrolled) {
+                        if ($window.scrollTop() > 200) {
+                            console.log('Down');
+                            $('#header-wrapper').addClass('shrink');
+                        } else {
+                            console.log('Bottom');
+                            $('#header-wrapper').removeClass('shrink');
+                        }
+                        scrolled = false;
+                    }
+                }, 1000);
+            });
+        </script>
         @yield('scripts')
     </body>
 </html>

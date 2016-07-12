@@ -163,6 +163,7 @@ return [
         Cocur\Slugify\Bridge\Laravel\SlugifyServiceProvider::class,
 
         Intervention\Image\ImageServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
 
     ],
 
@@ -212,6 +213,7 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         "Slugify" => "Cocur\Slugify\Bridge\Laravel\SlugifyFacade",
         'Image' => Intervention\Image\Facades\Image::class,
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
     ],
 
 ];

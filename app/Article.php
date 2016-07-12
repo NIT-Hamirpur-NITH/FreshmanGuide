@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     protected $fillable = ['user_id', 'title', 'content', 'slug'];
-    protected $appends = ['status'];
+    protected $appends = ['status', 'section'];
 
     public function sections() {
         return $this->belongsToMany(Section::class);
@@ -32,7 +32,7 @@ class Article extends Model
         return $value;
     }
 
-    public function getSection() {
+    public function getSectionAttribute() {
         return $this->sections()->first();
 
     }

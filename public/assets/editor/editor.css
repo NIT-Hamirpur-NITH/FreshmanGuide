@@ -56,41 +56,19 @@
     padding: 7em 0em 5em 0em;
 }
 
-.container {
-    z-index: 2;
-    position: relative;
-}
-
-#header-wrapper {
-    position: relative;
-    z-index: 1;
-}
-
-body {
-    background: #FFEEEE; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #FFEEEE , #DDEFBB); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #FFEEEE , #DDEFBB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
 #article {
-    /*padding: 1em;*/
-    margin-top: -3em;
-    z-index: 99;
-    background: rgb(250, 250, 250);
+    background: white;
+    margin-bottom: 2em;
 }
 
 #article-title h2 {
-    position: relative;
-    padding: 0.5em 1em;
-    text-transform: capitalize;
-    color: #CCC;
+    text-align: center;
     font-family: 'Oleo Script', italic;
-    font-weight: normal;
-    background: #232526; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #232526 , #414345); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #232526 , #414345); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    margin-bottom: 0;
-            
+    font-size: 2em;
+    color: #3e3e4e;
+    text-transform: capitalize;        
+    margin-top: 1em;
+
 }
 
 #editTitle {
@@ -115,6 +93,7 @@ body {
 
 #article > [data-editable] {
     padding: 1em 2em;
+    padding-top: 0em;
     padding-bottom: 3em;
 }
 

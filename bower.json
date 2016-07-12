@@ -1,0 +1,31 @@
+{
+  "name": "freshmanguide",
+  "description": "A guide for the freshers at NITH",
+  "main": "index.js",
+  "authors": [
+    "NIITHmr"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "php",
+    "nith"
+  ],
+  "homepage": "http://glug.nith.ac.in/freshman",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "resources/assets/bower",
+    "test",
+    "tests",
+    "public/assets/bower"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "metisMenu": "^2.5.2",
+    "font-awesome": "^4.6.3",
+    "datatables": "^1.10.12",
+    "vex": "^2.3.4"
+  }
+}
