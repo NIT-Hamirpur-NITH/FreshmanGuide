@@ -30,7 +30,7 @@ The guidelines for writing the articles are [here](http://glug.nith.ac.in/freshm
   11. ~~Discipline Club~~ (Shrayansh)
   12. ~~Pixonoid~~ (Shrayansh)
   13. ~~Fine Arts~~ (Abhimanyu)
-  14. ~~Deco~~ (Kriti)
+  14. ~~Deco~~ (Neenu)
   13. All clubs of hill'fair
     1. ~~Music club~~ (DIV)
   14. All clubs of Nimbus
