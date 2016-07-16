@@ -1,7 +1,7 @@
 #Hello writers
 
 The following articles need to be written for the website. The crossed have already been written or someone has taken responsibily to write them.
-This is not a complete list, if you fnid anything missing please send a Pull Request here(or if you are not that familiar with github message Akarshit Wal and you can discuss the topic with him).
+This is not a complete list, if you find anything missing please send a Pull Request here.
 
 The guidelines for writing the articles are [here](http://glug.nith.ac.in/freshman/read/the-path-to-follow)
 
