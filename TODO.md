@@ -13,7 +13,7 @@ The guidelines for writing the articles are [here](http://glug.nith.ac.in/freshm
   4. ~~Archi~~ (Antra)
   5. ~~Civil~~ (Varnika)
   6. ~~Mechanical~~ (Aman)
-  7. Chemical
+  7. ~~Chemical~~ (Tanya)
   8. M. Tech in all departments
 2. Clubs
   1. ~~CSEC~~ (Sunakshi)
