@@ -35,7 +35,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ url('read/the-path-to-follow') }}">
                         <i class="material-icons">event_note</i> Guidelines
                     </a>
                 </li>
