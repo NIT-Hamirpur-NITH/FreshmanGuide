@@ -75,9 +75,7 @@
     </div>
 </div>
 
-<div id="commentModal">
-    <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
-
+{{-- <div id="commentModal">
     <div class="close-commentModal btn-close-modal" > 
         <button class="btn btn-sm btn-danger"> <i class="material-icons">clear</i></button>
     </div>
@@ -87,7 +85,8 @@
     </div>
 
 </div>
-
+ --}}
+ 
 @endsection
 
 
