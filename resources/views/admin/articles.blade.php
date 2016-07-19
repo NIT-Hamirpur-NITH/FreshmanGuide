@@ -2,7 +2,6 @@
 
 @push('styles')
     @include('admin.partials.datatableCSS')
-    @include('admin.partials.utilCSS')
 @endpush
 
 @section('page')
@@ -40,7 +39,6 @@
             <tr>
                 <th>Id</th>
                 <th>Heading</th>
-                <th>SearchId</th>
                 <th>Section</th>
                 <th>Updated</th>
                 <th>Status</th>
@@ -55,7 +53,6 @@
 
 @push('scripts')
     @include('admin.partials.datatableJS')
-    @include('admin.partials.utilJS')
     <script>
         window.appURL = "{!! url('') !!}";
         window.sections = JSON.parse('{!! $sections !!}');
@@ -68,10 +65,9 @@
                 columns: [
                     { data: 'id', name: 'id' },
                     { data: 'title', name: 'title' },
-                    { data: 'searchid', name: 'searchid' },
-                    { data: 'section', name: 'section' },
-                    { data: 'updated_at', name: 'updated_at' },
-                    { data: 'published', name: 'published' },
+                    { data: 'section', name: 'section', orderable: false, searchable: false },
+                    { data: 'updated_at', name: 'updated_at', orderable: false, searchable: false},
+                    { data: 'published', name: 'published', orderable: false, searchable: false },
                     { data: 'action', name: 'action', orderable: false, searchable: false }
                 ]
             });

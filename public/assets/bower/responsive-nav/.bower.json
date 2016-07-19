@@ -1,0 +1,22 @@
+{
+  "name": "responsive-nav",
+  "version": "1.0.39",
+  "main": [
+    "responsive-nav.css",
+    "responsive-nav.js"
+  ],
+  "ignore": [
+    "demos/"
+  ],
+  "homepage": "https://github.com/viljamis/responsive-nav.js",
+  "_release": "1.0.39",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.39",
+    "commit": "ae7b56cb727f8b6eedb62ad6edb76832eb862a39"
+  },
+  "_source": "https://github.com/viljamis/responsive-nav.js.git",
+  "_target": "^1.0.39",
+  "_originalSource": "responsive-nav",
+  "_direct": true
+}

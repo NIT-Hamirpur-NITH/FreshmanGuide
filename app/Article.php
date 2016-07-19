@@ -13,6 +13,10 @@ class Article extends Model
         return $this->belongsToMany(Section::class);
     }
 
+    public function comments() {
+        return $this->hasMany(Comment::class);
+    }
+
 
     // custom attributes
     public function getStatusAttribute() {

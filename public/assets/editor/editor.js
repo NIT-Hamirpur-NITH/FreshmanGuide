@@ -1,8 +1,7 @@
 'use strict';
 
 
-
-function changeTitle(event) {
+function changeTitle() {
 
     vex.dialog.prompt({
       message: 'Enter new title',
@@ -16,7 +15,7 @@ function changeTitle(event) {
             var type = data.success ? 'success' : 'error';
             var text = data.success ? data.message : data.error;
             if (data.success) {
-                $('#title').html(value);
+                $('.article-title').html(value);
             }
             notify(text, type);
         })
@@ -26,20 +25,47 @@ function changeTitle(event) {
       }
     });
 
+
+
+}
+
+function addComment() {
+
+    vex.dialog.open({
+        message: 'Comment',
+        input: '<input type="textarea" placeholder="Write here" name="message" required />',
+        buttons: [
+            $.extend({}, vex.dialog.buttons.YES, {
+                text: 'Comment',
+            }),
+            $.extend({}, vex.dialog.button.NO, {
+                text: 'Back',
+            }),
+        ],
+        callback: function(data) {
+            if (data === false) {
+                return console.log('Cancelled commenting');
+            }
+            $.post(window.appURL + '/comment/' + window.articleID, {message: data.message})
+            .done(function(data) {
+                var type = data.success ? 'success' : 'error';
+                var text = data.success ? data.message : data.error;
+                notify(text, type);
+            })
+            .fail(function() {
+                notify('Unable to save your comment, please forgive!', 'error'); 
+            });
+        }
+    });
+
 }
 
 $(function() {
 
 
     // change title
-    $('#editTitle').click(changeTitle);
+    $('#edit-title').click(changeTitle);
 
-
-    noty({
-        text: 'Please save the URL in the location bar to edit this article again. Click to dismiss',
-        type: 'success',
-        timeout: false,
-    });
 
     var editor;
     editor = ContentTools.EditorApp.get();

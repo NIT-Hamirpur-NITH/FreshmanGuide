@@ -47,7 +47,7 @@ class AdminController extends Controller
     }
 
     public function articlesData(Request $request) {
-        $articles = Article::select(['id', 'title', 'searchid', 'updated_at', 'published'])->orderBy('updated_at', 'desc');
+        $articles = Article::select(['id', 'title', 'searchid', 'updated_at', 'published', 'slug'])->orderBy('updated_at', 'desc');
 
         return Datatables::of($articles)
             ->addColumn('action', function($article) {
@@ -56,7 +56,7 @@ class AdminController extends Controller
                     '<a href="' . url('admin/delete') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="delete btn btn-sm btn-danger" target="_blank" data-title="' . $article->title . '"> Delete </a>';
 
                 if ($article->published) {
-                    $html .= '<a href="' . url('admin/unpublish') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="unpublish btn btn-sm btn-warning" target="_blank" data-title="' . $article->title . '"> Unpublish </a>';
+                    $html .= '<a href="' . url('admin/unpublish') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="unpublish btn btn-sm btn-warning" target="_blank" data-title="' . $article->title . '"> Unpublish </a>' . '<a href="' . url('read') . '/' . $article->slug . '" data-id="' . $article->searchid . '" class="btn btn-sm btn-link" target="_blank" data-title="' . $article->title . '"> Read </a>';
                 } else {
                     $html .= '<a href="' . url('admin/publish') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="publish btn btn-sm btn-success" target="_blank" data-title="' . $article->title . '"> Publish </a>';
                 }
@@ -69,15 +69,11 @@ class AdminController extends Controller
             })
             ->editColumn('section', function($article) {
                 if (!$article->section) {
-                    return '<a href="' . url('admin/categorize') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="section btn btn-sm btn-success" target="_blank" data-title="' . $article->title . '"> Categorize </a>';
+                    return '<a href="' . url('admin/categorize') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="change-section btn btn-sm btn-success" target="_blank" data-title="' . $article->title . '"> Categorize </a>';
                 } else {
-                    return $article->section->name . '<a href="' . url('admin/categorize') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="section btn btn-sm btn-success" target="_blank" data-title="' . $article->title . '"> Change </a>';
+                    return '<span ' . 'data-id="' . $article->searchid . '" class="section">' .  $article->section->name . '</span><a href="' . url('admin/categorize') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="change-section button-edit btn btn-sm btn-success" target="_blank" data-title="' . $article->title . '"> <i class="fa fa-pencil"></fa> </a>';
                 }
             })
-            ->editColumn('updated_at', function($article) {
-                return \Carbon\Carbon::createFromTimeStamp(strtotime($article->updated_at))->diffForHumans();
-            })
-            ->removeColumn('updated_at')
             ->make(true);
     }
 

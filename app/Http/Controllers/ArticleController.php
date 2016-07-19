@@ -72,9 +72,10 @@ class ArticleController extends Controller
             return response('The article is not found', 404);
         }
 
-        return view('articles.edit', [
+        return view('material.edit', [
             'article' => $article,
-            'bodyClass' => 'no-sidebar',
+            'bodyClass' => 'index-page',
+            'comments' => $article->comments()->where('hide', false)->get(),
             'title' => 'Editing',
         ]);
 
@@ -188,10 +189,10 @@ class ArticleController extends Controller
             return response('There is no article to save', 404);
         }
 
-        return view('articles.read', [
+        return view('material.read', [
             'article' => $article,
             'title' => $article->title,
-            'bodyClass' => 'no-sidebar',
+            'bodyClass' => 'index-page',
         ]);
 
     }

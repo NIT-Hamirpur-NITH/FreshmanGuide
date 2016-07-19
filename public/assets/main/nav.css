@@ -1,40 +1,29 @@
-/*
- * The css for the navigation of the website
-*/
-
-@media (min-width: 737px) {
-
-    #header-wrapper.small {
-        height: 3.5em;
-        position: relative;
-        padding: 0.5em 2em;
-    }
-
-    #header.small {
-        position: relative;
-        padding: 0;
-    }
-
-    #header.small > div {
-        position: relative;
-        float: left;
-        left: 20px;
-    }
-
-    #header.small > div > #logo{
-        font-size: 2.5em;
-        margin-top: 0.2em;
-    }
-
-    #header.small >  #nav {
-        padding: 0.7em;
-        position: relative;
-        top: 0;
-    }
-
-    #header.small > #nav > ul {
-        float: right;
-        margin-bottom: 0;
-    }
-
+.navigation {
+    position: relative;
+    color: white !important;
+    background: #4b6cb7; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #4b6cb7 , #182848); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #4b6cb7 , #182848); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */           
+    height: 60px;
 }
+
+@media screen and (min-width: 737px) {
+    .navigation > .brand {
+        float: left;
+    }
+
+    .navigation > .menu {
+        float: right;
+    }
+
+    .navigation > .menu > ul {
+        list-style: none;
+    }    
+
+    .navigation > .menu > ul > li {
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+    }
+}
+

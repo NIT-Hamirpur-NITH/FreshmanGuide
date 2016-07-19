@@ -1,0 +1,14 @@
+td {
+    position: relative;
+}
+
+.button-edit {
+    position: relative;
+    background: white;
+    color: green;
+    border: none;
+    top: -5px;
+    padding: 0;
+    margin-left: 3px;
+    font-size: 10px;
+}

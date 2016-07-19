@@ -11,16 +11,22 @@ use FreshmanGuide\Section;
 class SectionController extends Controller {
 
     public function home(Request $request) {
-        $sections = Section::all();
+        $sections = Section::with(['articles' => function ($query) {
+            $query->select('title', 'slug')->where('published', true);
+        }])->get();
         if (!$sections) {
             throw new AdminException('Unable to fetch section', 0);
         }
 
-        return view('sections.home', [
-            'title' => 'Sections',
-            'bodyClass' => 'no-sidebar',
-            'sections' => $sections,
-        ]);
+        if ($request->ajax()) {
+            return response()->json($sections);            
+        } else {
+            return view('material.sections', [
+                'title' => 'Sections',
+                'bodyClass' => 'index-page',
+                'sections' => $sections,
+            ]);
+        }
 
     }
 
@@ -30,9 +36,9 @@ class SectionController extends Controller {
             throw new AdminException('No such Section', 0);
         }
 
-        return view('sections.articles', [
+        return view('material.section-articles', [
             'title' => $section->name,
-            'bodyClass' => 'no-sidebar',
+            'bodyClass' => 'index-page',
             'section' => $section,
             'articles' => $section->articles()->where('published', true)->get(),
         ]);

@@ -12,40 +12,19 @@
     <!-- /.navbar-header -->
 
     <ul class="nav navbar-top-links navbar-right">
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-user">
-                <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                </li>
-                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                </li>
-                <li class="divider"></li>
-                <li><a href="{{ url('admin/logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                </li>
-            </ul>
-            <!-- /.dropdown-user -->
+        <li>
+            <a href="{{ url('admin') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
         </li>
-        <!-- /.dropdown -->
+        <li>
+            <a href="{{ url('admin/articles') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Artilces </a>
+        </li>
+        <li>
+            <a href="{{ url('admin/sections') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Sections </a>
+        </li>
+        <li>
+            <a href="{{ url('admin/logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+        </li>
     </ul>
     <!-- /.navbar-top-links -->
 
-    <div class="navbar-default sidebar" role="navigation">
-        <div class="sidebar-nav navbar-collapse">
-            <ul class="nav" id="side-menu">
-                <li>
-                    <a href="{{ url('admin') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                </li>
-                <li>
-                    <a href="{{ url('admin/articles') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Artilces </a>
-                </li>
-                <li>
-                    <a href="{{ url('admin/articles') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Sections </a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.sidebar-collapse -->
-    </div>
-    <!-- /.navbar-static-side -->
 </nav>

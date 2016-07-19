@@ -11,18 +11,18 @@
 |
 */
 
-// Route for the landing page
+// Route for the landing page and other home activities
 Route::get('/', function () {
-    return view('home', [
+    return view('material.home', [
         'title' => 'Home',
-        'bodyClass' => 'homepage',
+        'bodyClass' => 'landing-page',
     ]);
 });
 
 // Routes for sections page
 Route::group(['prefix' => 'sections'], function() {
     Route::get('/', 'SectionController@home');
-Route::get('/{id}/articles', 'SectionController@articles');
+    Route::get('/{id}/articles', 'SectionController@articles');
 });
 
 // Route for the about page
