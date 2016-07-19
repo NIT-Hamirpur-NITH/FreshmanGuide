@@ -76,7 +76,7 @@
 </div>
 
 
-<div id="commentModal">
+{{-- <div id="commentModal">
     <div class="close-commentModal btn-close-modal" > 
         <button class="btn btn-sm btn-danger"> <i class="material-icons">clear</i></button>
     </div>
@@ -85,7 +85,7 @@
         @include('material.partials.comments')
     </div>
 
-</div>
+</div> --}}
 
 
 @endsection
