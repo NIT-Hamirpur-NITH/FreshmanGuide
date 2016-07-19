@@ -1,7 +1,7 @@
 #Hello writers
 
 The following articles need to be written for the website. The crossed have already been written or someone has taken responsibily to write them.
-This is not a complete list, if you fnid anything missing please send a Pull Request here(or if you are not that familiar with github message Akarshit Wal and you can discuss the topic with him).
+This is not a complete list, if you find anything missing please send a Pull Request here.
 
 The guidelines for writing the articles are [here](http://glug.nith.ac.in/freshman/read/the-path-to-follow)
 
@@ -13,7 +13,7 @@ The guidelines for writing the articles are [here](http://glug.nith.ac.in/freshm
   4. ~~Archi~~ (Antra)
   5. ~~Civil~~ (Varnika)
   6. ~~Mechanical~~ (Aman)
-  7. Chemical
+  7. ~~Chemical~~ (Tanya)
   8. M. Tech in all departments
 2. Clubs
   1. ~~CSEC~~ (Sunakshi)
@@ -30,7 +30,7 @@ The guidelines for writing the articles are [here](http://glug.nith.ac.in/freshm
   11. ~~Discipline Club~~ (Shrayansh)
   12. ~~Pixonoid~~ (Shrayansh)
   13. ~~Fine Arts~~ (Abhimanyu)
-  14. ~~Deco~~ (Kriti)
+  14. ~~Deco~~ (Neenu)
   13. All clubs of hill'fair
     1. ~~Music club~~ (DIV)
   14. All clubs of Nimbus
