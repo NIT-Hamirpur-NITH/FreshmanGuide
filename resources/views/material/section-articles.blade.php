@@ -20,7 +20,7 @@
         <ul class="list-unstyled articles-list">
         @foreach ($articles as $a)
             <li>
-                <a class="article-link" href="{{ url('/read/') . '/' . $a->slug }}"> <i class="material-icons">done_all</i> {{ $a->title }} </a>
+                <a class="article-link" href="{{ url('/read/') . '/' . $a->slug }}"> <i class="material-icons">fast_forward</i> {{ $a->title }} </a>
                 <span class="published"> &nbsp; (Updated :  {{ $a->ago() }}) </span>
             </li>
         @endforeach

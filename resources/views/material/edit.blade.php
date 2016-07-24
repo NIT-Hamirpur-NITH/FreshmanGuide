@@ -15,7 +15,7 @@
                     <h2 class="article-title"> {{ $article->title }}  </h2>
                     <p>
                         <button type="button" id='edit-title' class="btn btn-success btn-sm"> <i class="material-icons">create</i> Edit Title  </button>
-                        <button type="button" class="btn btn-info btn-sm"> <i class="material-icons">comment</i> Comment  </button>
+                        <a id="comment" href="#commentModal"  type="button" class="btn btn-info btn-sm"> <i class="material-icons">comment</i> Comment  </a>
                     </p>
                 </div>
             </div>
@@ -76,16 +76,16 @@
 </div>
 
 
-{{-- <div id="commentModal">
+<div id="commentModal">
     <div class="close-commentModal btn-close-modal" > 
-        <button class="btn btn-sm btn-danger"> <i class="material-icons">clear</i></button>
+        <button class="btn btn-danger"> <i class="material-icons">clear</i> Close </button>
     </div>
         
     <div class="modal-content">
         @include('material.partials.comments')
     </div>
 
-</div> --}}
+</div>
 
 
 @endsection

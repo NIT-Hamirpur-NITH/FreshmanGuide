@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use FreshmanGuide\Http\Requests;
 use FreshmanGuide\Article;
+use FreshmanGuide\Comment;
 
 class ArticleController extends Controller
 {
@@ -75,7 +76,7 @@ class ArticleController extends Controller
         return view('material.edit', [
             'article' => $article,
             'bodyClass' => 'index-page',
-            'comments' => $article->comments()->where('hide', false)->get(),
+            'comments' => $article->comments()->where('hide', false)->orderBy('created_at', 'decr')->get(),
             'title' => 'Editing',
         ]);
 
@@ -132,7 +133,7 @@ class ArticleController extends Controller
                 'success' => false,
                 'error' => 'Unable to save the title, something bad happened',
             ]);
-        }      
+        }
 
     }
 
@@ -194,6 +195,45 @@ class ArticleController extends Controller
             'title' => $article->title,
             'bodyClass' => 'index-page',
         ]);
+
+    }
+
+
+    public function addComment(Request $request, $searchid) {
+
+        if ($request->input('message') == '') {
+            return response()->json([
+                'success' => false,
+                'error' => 'Please enter a comment',
+            ]);
+        }
+
+        $article = Article::where('searchid', $searchid)->first();
+
+        if (!$article) {
+            return response()->json([
+                'success' => false,
+                'error' => 'Article not found',
+            ]);
+        }
+
+        $comment = new Comment();
+        $comment->message = $request->input('message');
+        $comment->reply = '';
+        $comment->article()->associate($article);
+
+        if ($comment->save()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Comment has been added',
+                'id' => $comment->id,
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'error' => 'Unable to save the comment',
+            ]);
+        }
 
     }
 

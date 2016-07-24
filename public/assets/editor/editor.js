@@ -323,4 +323,81 @@ $(function() {
 
     }
 
+    // show all comments handler
+    $('#comment').animatedModal({
+        modalTarget:'commentModal',
+        animatedIn:'lightSpeedIn',
+        animatedOut:'bounceOutDown',
+        color: 'rgba(255, 255, 255, 1)',
+        // Callbacks
+        beforeOpen: function() {
+            
+        },           
+        afterOpen: function() {
+            
+        }, 
+        beforeClose: function() {
+            
+        }, 
+        afterClose: function() {
+            
+        }
+    });
+
+    // $('#comment').click();
+
+    $('form[name=comment-form]').submit(function(event) {
+        event.preventDefault();
+        
+        var $form = $(this);
+        var $messageBox = $('.comment-box');
+        console.log($form.find('textarea[name=message]').val());
+        $.post($form.attr('action'), {
+            message: $form.find('textarea[name=message]').val(),
+        })
+        .done(function(data) {
+            var type = data.success ? 'success' : 'error';
+            var text = data.success ? data.message : data.error;
+            if (data.success) {
+                var $row = $('<div>').addClass('row');
+                var $message = $('<div>').addClass('col-md-5 col-md-offset-1 message').text($form.find('textarea[name=message]').val());
+                var $reply = $('<div>').addClass('col-md-5 reply');
+                var $hide = $('<div>').addClass('col-md-1');
+                var $button = $('<a>').attr('href', window.appURL + '/comment/hide/' + data.id).html('<i class="material-icons">clear</i>').addClass('btn btn-danger btn-simple btn-sm remove-comment');
+                $button.click(removeComment);
+                $hide.append($button);
+                $row.append($message).append($reply).append($hide);
+                $messageBox.prepend($row).fadeIn();
+            }
+            notify(text, type);
+        })
+        .fail(function() {
+            notify('Unable to save new title, please forgive!', 'error'); 
+        });
+
+    });
+
+    $('.remove-comment').click(removeComment);
+
 });
+
+
+function removeComment(event) {
+    event.preventDefault();
+    var $url = $(this).attr('href');
+    var $row = $(this).parent('div').parent();
+    console.log($row.children().length);
+    $.get($url)
+    .done(function(data) {
+        var type = data.success ? 'success' : 'error';
+        var text = data.success ? data.message : data.error;
+        if (data.success) {
+            $row.hide();
+        }
+        notify(text, type);
+    })
+    .fail(function() {
+        notify('Unable to remove comment, show mercy!', 'error'); 
+    });
+
+}

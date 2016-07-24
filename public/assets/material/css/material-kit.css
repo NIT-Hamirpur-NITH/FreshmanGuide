@@ -55,17 +55,10 @@ body.inverse .card .form-control {
   background: #FFFFFF;
 }
 
-body {
-  font-family: "PT Serif", "Helvetica", "Arial", sans-serif;
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
   line-height: 1.5em;
-}
-
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
-  font-family: "Oswald", "Helvetica", "Arial", sans-serif;
-}
-
-h5.description, h4.description {
-  font-family: "PT Serif", "Helvetica", "Arial", sans-serif;
 }
 
 a, a:hover, a:focus {
@@ -3644,7 +3637,6 @@ h2.title {
 
 .index-page .wrapper > .header {
   /*height: 90vh;*/
-  padding-bottom: 60px;
 }
 .index-page .brand {
   margin-top: 30vh;
@@ -3684,12 +3676,6 @@ h2.title {
 .landing-page .header h1 {
   font-weight: 600;
 }
-
-.landing-page .header p {
-  font-weight: lighter;
-  font-size: 16px;
-}
-
 .landing-page .header .title {
   color: #FFFFFF;
 }

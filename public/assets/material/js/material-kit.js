@@ -1,34 +1,3 @@
-/*! =========================================================
- *
- * Material Kit Free - V1.1.0
- *
- * =========================================================
- *
- *
- *                       _oo0oo_
- *                      o8888888o
- *                      88" . "88
- *                      (| -_- |)
- *                      0\  =  /0
- *                    ___/`---'\___
- *                  .' \\|     |// '.
- *                 / \\|||  :  |||// \
- *                / _||||| -:- |||||- \
- *               |   | \\\  -  /// |   |
- *               | \_|  ''\---/''  |_/ |
- *               \  .-\__  '-'  ___/-. /
- *             ___'. .'  /--.--\  `. .'___
- *          ."" '<  `.___\_<|>_/___.' >' "".
- *         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
- *         \  \ `_.   \_ __\ /__ _/   .-` /  /
- *     =====`-.____`.___ \_____/___.-`___.-'=====
- *                       `=---='
- *
- *     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *
- *               Buddha Bless:  "No Bugs"
- *
- * ========================================================= */
 
 var transparent = true;
 
@@ -100,8 +69,8 @@ $(document).ready(function(){
         "tolerance": 5,
         "classes": {
             "initial": "animated",
-            "pinned": "bounceInDown",
-            "unpinned": "bounceOutUp"
+            "pinned": "slideInDown",
+            "unpinned": "slideOutUp"
         }
     });
 
@@ -146,8 +115,8 @@ $(document).ready(function(){
     // show all articles handler
     $('#all-articles').animatedModal({
         modalTarget:'articlesModal',
-        animatedIn:'lightSpeedIn',
-        animatedOut:'bounceOutDown',
+        animatedIn:'zoomIn',
+        animatedOut:'zoomOut',
         color: 'rgba(255, 255, 255, 1)',
         // Callbacks
         beforeOpen: function() {
@@ -168,31 +137,49 @@ $(document).ready(function(){
         }
     });
 
+    // $('#all-articles').click();
+
 });
 
-function setupArticlesNav($target) {
-    $target.html('<div class="spinner"> <div class="dot1"></div>  <div class="dot2"></div></div>');
+function setupArticlesNav() {
+    var $tabs = $('ul.nav.nav-tabs');
+    var $contents = $('.tab-content'); 
+    $tabs.html('Loading...');
+    $contents.html('<div class="spinner"> <div class="dot1"></div>  <div class="dot2"></div></div>');
     $.get(window.appURL + '/sections')
     .done(function(data) {
-        $target.html('');
-        data.forEach(function(section) {
-            var $section = $('<div>').addClass('col-md-4 section-list');
-            var $sectionItem = $('<div>').addClass('section-item');
-            var $heading = $('<h2>').html('<i class="material-icons">dashboard</i> <span>' + section.name + '</span>');
-            if (section.articles && section.articles.length > 0) {
-                var $list = $('<ul>').addClass('list-unstyled');
-                section.articles.forEach(function(article) {
-                    $list.append($('<li>').html('<a class="btn btn-sm btn-simple" href="' + window.appURL + '/read/' + article.slug + '"><i class="material-icons">done_all</i>' + article.title + '</a>'));
-                });
-                $sectionItem.append($heading).append($list);
-            } else {
-                $sectionItem.append($heading).append('<span style="text-align:center; padding: 1em; color: white"> No articles published in this section yet </span>');
-            }
-            
-            $section.append($sectionItem);
-            $target.append($section);
-            window.articles = true;
+        // $target.html('');
+        
+        $tabs.html('');
+        $contents.html('');
+        data.forEach(function(section, index) {
+
+
+            var $tab = $('<li>').addClass(index ? 0 : 'active');
+            var $link = $('<a>').attr('href', '#section-' + section.id).attr('data-toggle', 'tab').text(section.name);
+            $tab.append($link);
+            $tabs.append($tab);
+
+            var $content = $('<div>').addClass('tab-pane').addClass(index ? 0 : 'active').attr('id', 'section-' + section.id);
+            var $list = $('<ul>');
+            section.articles.forEach(function(article, index) {
+                var $article = $('<li>');
+                var color;
+                if (index % 3 === 0) {
+                    color = 'btn-primary';
+                } else if (index % 2 === 0) {
+                    color = 'btn-success';
+                } else if (index % 1 === 0) {
+                    color = 'btn-info';
+                }
+                var $artLink = $('<a>').attr('href', window.appURL + '/read/' + article.slug).html(article.title).addClass('btn btn-simple ' + color);
+                $article.append($artLink);
+                $list.append($article);
+            });
+            $content.append($list);
+            $contents.append($content);
         });
+        window.articles = true;
 
     })
     .fail(function() {

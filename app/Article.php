@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     protected $fillable = ['user_id', 'title', 'content', 'slug'];
-    protected $appends = ['status', 'section'];
+    protected $appends = ['status', 'section', 'count'];
 
     public function sections() {
         return $this->belongsToMany(Section::class);
@@ -43,6 +43,10 @@ class Article extends Model
 
     public function ago() {
         return \Carbon\Carbon::createFromTimeStamp(strtotime($this->updated_at))->diffForHumans();
+    }
+
+    public function getCountAttribute() {
+        return $this->comments()->where('reply', '')->count();
     }
 
 }

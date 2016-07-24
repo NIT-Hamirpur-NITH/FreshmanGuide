@@ -128,6 +128,43 @@ $(function() {
         });
 
     });
+
+
+    $('.reply-comment').click(function(event) {
+        event.preventDefault();
+        var url = $(this).attr('href');
+        var $cloned = $(this).clone(true);
+        var $parent = $(this).parent();
+        vex.dialog.prompt({
+          message: 'Enter your reply',
+          input: '<textarea name="reply" placeholder="reply" required></textarea>',
+          callback: function(value) {
+            if (!value) {
+                return notify('No reply given', 'info');
+            }
+            $.post(url, {reply: value.reply})
+            .done(function(data) {
+                var type = data.success ? 'success' : 'error';
+                var text = data.success ? data.message : data.error;
+                notify(text, type);
+                $parent.html(value.reply + ' ').append($cloned.text('New Reply'));
+            })
+            .fail(function() {
+                notify('Unable to reply, please forgive!', 'error'); 
+            });
+          }
+        });
+    })
+
+
+    $('.delete-comment').click(function(event) {
+        event.preventDefault();
+        var url = $(this).attr('href');
+        var $row = $(this).parent().parent();
+        handleAction(url, 'GET', null, function(){
+            $row.hide();
+        }, 'Unable to delete, please forgive!');
+    });
     
 
 

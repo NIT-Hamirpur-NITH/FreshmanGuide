@@ -72,94 +72,70 @@
 }
 
 .btn-close-modal {
-    position: absolute;
-    text-align: right;
-    z-index: 99;
-    right: 0;
-    top: 0;
+    text-align: center;
+    margin: 0 5em;
 }
 
-.btn-close-modal button.btn.btn-sm {
-  margin: 0px;
+#articlesModal .header {
+  height: auto;
+  min-height: auto;
+  background-color: rgb(238,238,238);
+  box-shadow: none;
+  margin: 0;
 }
 
 .modal-content {
-  padding-top: 2em;
   min-height: 100%;
-  background: #9c27b0;
-  display: flex;
-  flex-wrap: wrap;
-}    
-
-.modal-content .section-list {
-  padding: 0 2em 2em 2em; 
-  display: flex;
+  padding: 0em 5em;
+  padding-bottom: 2em;
 }
 
-.modal-content .section-list:nth-child(3n + 2) {
-  padding: 0 0 2em 0;
-  display: flex;
+.modal-content .tab-content {
+  min-height: 10vh;
 }
 
-.modal-content .section-list .section-item {
-  border-radius: 1em;
-  /*border: 1px solid rgba(0, 0, 0, 0.3);*/
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+.tab-content ul {
+  list-style: none;
+
 }
 
-#articlesModal .modal-content .section-list h2 {
-  color: #9c27b0;
-  /*color: white;*/
+.tab-content ul > li {
+  display: inline-block;
+  padding: 0.5em;
+}
+
+.modal-content .card.card-nav-tabs {
+  box-shadow: none;
+  margin-top: 0;
+}
+
+.tab-content ul > li > a {
+  color: rgb(30,30,50);
+  text-transform: none;
+}
+
+.tab-content ul > li > a.btn-simple.btn-primary {
+  border: 1px solid #9c27b0;
+  color: #480370;
+}
+
+.tab-content ul > li > a.btn-simple.btn-info {
+  border: 1px solid #03a9f4;
+  color: #004390;
+}
+
+.tab-content ul > li > a.btn-simple.btn-success {
+  border: 1px solid #4caf50;
+  color: #086b10;
+}
+
+
+.nav-tabs > li > a {
+  font-family: Titillium Web, sans-serif;
+  font-weight: 600;
   font-size: 1em;
-  font-weight: bolder;
-  text-transform: uppercase;
-  margin: 0;
-  padding: 0.5em 1em;
-  padding-left: 2em;
-  background: rgb(245, 245, 245);
-  background: rgba(255, 255, 255, 0.9);
-  /*border: 1px solid rgba(255, 255, 255, 0.9);*/
-  position: relative;
-  font-family: Merriweather, serif;
 }
 
-#articlesModal .modal-content .section-list h2 .material-icons {
-    position: relative;
-    top: 2px;
-    margin-right: 3px;
-    font-size: 1em;
-}
-
-#articlesModal .modal-content ul {
-  color: white;
-  flex: 1 0 auto;
-  padding: 1em;
-  padding-left: 2em;
-  padding-top: 0.5em;
-  /*border: 1px solid rgba(255, 255, 255, 0.9);*/
-  background: rgba(0,0,0,0.02);
-}
-
-#articlesModal .modal-content ul li {
-  padding: 0px;
-  position: relative;
-}
-
-#articlesModal .modal-content ul li .btn.btn-sm.btn-simple {
-  color: white;
-  font-size: 1em;
-  font-weight: bold;
-  padding: 0.2em 0em;
-  margin: 0;
-  text-transform: capitalize;
-}
-
-#articlesModal .modal-content ul li a .material-icons {
-  position: relative;
-  margin-right: 10px;
-}
 
 /**
   * For the sections page
@@ -436,14 +412,22 @@
     }
 
 
+.footer .left {
+  padding: 15px 0;
+}
+
+h5.description, h4.description {
+  color: #666;
+}
+
+
 /**
 * FOR SECTION ARTICLES PAGE
 **/
 
 .brand h2 {
-  font-weight: bold;
-  font-size: 2.5em;
-  text-transform: uppercase;
+  font-weight: 600;
+  /*text-transform: uppercase;*/
 }
 
 .articles-list {
@@ -458,10 +442,18 @@
 }
 
 .articles-list > li > a {
-  font-weight: bold;
+  font-weight: 400;
   font-size: 1.5em;
+  color: rgb(50,50,80);
+  font-family: Titillium Web, sans-serif;
 }
 
 .articles-list > li > a .material-icons {
   margin-right: 10px;
+  font-weight: 400;
+  font-weight: 300;
+}
+
+span.published {
+  font-size: 1.2em;
 }

@@ -31,6 +31,8 @@
     "headroom.js": "https://npmcdn.com/headroom.js/bower.zip",
     "animate.css": "^3.5.2",
     "toastr": "^2.1.2",
-    "blockUI": "*"
+    "blockUI": "*",
+    "slideout.js": "https://github.com/mango/slideout.git#^0.1.12",
+    "reading-time": "^1.0.0"
   }
 }

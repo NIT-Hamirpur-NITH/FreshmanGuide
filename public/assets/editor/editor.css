@@ -57,67 +57,70 @@
     padding: 0;
 }
 
-.main .container {
+.main {
     background: rgb(250, 250, 250);
 }
 
 [data-editable] {
     overflow: auto;
-    font-size: 16px;
-    line-height: 24px;
-    font-family: PT Serif, serif;
-    font-weight: normal;
+    font-family: Lato, serif;
+    font-weight: 300;
     padding: 3em;
-    color: rgb(51, 51, 71);
+    font-size: 130%;
 }
 
 [data-editable] p {
-    font-size: 16px;
-    margin-bottom: 12px;
-    line-height: 24px;
-    font-family: PT Serif, serif;
-    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: 300;
+    color: rgb(10, 10, 20);
+    margin-bottom: 1em;
 }
 
 [data-editable] h1, [data-editable] h2 {
-    font-family: Oswald, sans-serif;
+    font-family: Titillium Web, sans-serif;
     font-weight: bold;
     line-height: normal;
 } 
 
 [data-editable] h1 {
-    font-size: 32px;
-    margin: 32px 0;
+    font-size: 1.8em;
+    margin: 1em 0;
+    font-weight: 700;
 }
 
 [data-editable] h2 {
-    font-size: 24px;
-    margin: 24px 0 24px 0;
-    font-weight: normal;
+    font-size: 1.5em;
+    margin: 1em 0 1em 0;
+    font-weight: 600;
 }
 
 [data-editable] h1 + h2 {
     margin: 0;
-    margin-bottom: 24px;
+    margin-bottom: 1em;
 }
 
 [data-editable] h2 + h2 {
     margin: 0;
-    margin-bottom: 24px;
+    margin-bottom: 1em;
 }
 
 [data-editable] ul, [data-editable] ol {
     list-style-position: outside;
-    padding-left: 24px;
+    padding-left: 1.5em;
     overflow: hidden;
 }
 
 [data-editable] li {
-    margin-bottom: 4px;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+    line-height: 1.4em;
+    font-weight: 300;
+    color: rgb(10, 10, 20);
 }
 
 [data-editable] li > ul, [data-editable] li > ul {
-    margin: 4px 0;
+    margin: 0.5em 0;
 } 
 
 [data-editable] li > ul li, [data-editable] li > ol li {
@@ -127,29 +130,23 @@
 
 [data-editable] table {
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 1em;
 }
 
 [data-editable] table th {
     text-align: center;
     background: #9c27b0;
-    padding: 8px;
-    font-size: 20px;
+    padding: 0.5em;
+    font-size: 1.2em;
     font-weight: normal;
     color: white;
-    font-family: Oswald, sans-serif;
+    font-family: Titillium Web, sans-serif;
 }
 
 [data-editable] table td {
     text-align: center;
-    padding: 8px;
-    font-size: 16px;
-}
-
-[data-editable] table td {
-    text-align: center;
-    padding: 8px;
-    font-size: 16px;
+    padding: 0.5em;
+    font-size: 1em;
 }
 
 [data-editable] table tr:nth-child(2n) {
@@ -161,7 +158,7 @@
 }
 
 [data-editable] img + p {
-    margin-top: 12px;
+    margin-top: 1em;
 }
 
 .grain {
@@ -191,9 +188,53 @@
 }
 
 .brand .article-title  {
-    font-size: 32px;
-    font-weight: 400;
+    font-size: 2.5em;
+    font-weight: 600;
     line-height: normal;
     text-transform: capitalize;
-    font-family: Oswald, sans-serif;
+    font-family: Titillium Web, sans-serif;
+}
+
+
+/*
+* Comment sections
+*/
+
+.modal-content {
+    padding: 0 7em;
+    box-shadow: none;
+}
+
+.comment-input {
+    padding: 1em;
+}
+
+.comment-box {
+    padding: 1em;
+    /*background: rgb(238,238, 238);*/
+    
+}
+
+.comment-box > .row {
+    padding: 0.5em;
+    line-height: 1.2em;
+    font-weight: 400;
+    display: flex;
+}
+
+.message {
+    text-align: right;
+    padding: 1em;
+    background: rgb(230, 250, 230);
+}
+
+.reply {
+    padding: 1em;
+    text-align: left;
+    background: rgb(230, 230, 250);
+}
+
+.eta, .words {
+    font-weight: bold;
+    font-size: 1.2em;
 }

@@ -13,8 +13,8 @@
 
     <!--     Fonts and icons     -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,300i,400,400i,600,600i,700,700i" rel="stylesheet"> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
 
     <!-- CSS Files -->
@@ -31,6 +31,10 @@
         }
 
         .index-page .wrapper > .header {
+            min-height: 50vh;
+        }
+
+        .index-page .wrapper > article > .header {
             min-height: 50vh;
         }
 
@@ -59,7 +63,7 @@
         <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
 
         <div class="close-articlesModal btn-close-modal" > 
-            <button class="btn btn-sm btn-danger"> <i class="material-icons">clear</i></button>
+            <button class="btn btn-danger"> <i class="material-icons">clear</i> Close </button>
         </div>
             
         <div class="modal-content">

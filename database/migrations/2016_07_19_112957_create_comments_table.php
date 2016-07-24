@@ -21,7 +21,7 @@ class CreateCommentsTable extends Migration
 
             // associate with article
             $table->integer('article_id')->unsigned();
-            $table->foreign('article_id')->references('id')->on('article');
+            $table->foreign('article_id')->references('id')->on('articles');
         });
     }
 

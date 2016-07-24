@@ -56,6 +56,7 @@ Route::post('/add', 'ArticleController@create');
 Route::get('/edit/{searchid}', 'ArticleController@edit');
 Route::post('/save/{searchid}', 'ArticleController@save');
 Route::post('/title/{searchid}', 'ArticleController@titleChange');
+Route::post('/comment/{searchid}', 'ArticleController@addComment');
 
 // handling image uplaods
 Route::post('/image/upload', 'ImageController@upload');
@@ -63,6 +64,8 @@ Route::post('/image/rotate', 'ImageController@rotate');
 Route::post('/image/insert', 'ImageController@insert');
 Route::post('/image/onsave', 'ImageController@onsave');
 
+// comment hide
+Route::get('/comment/hide/{commentId}', 'CommentController@hide');
 
 // login to the website
 Route::get('/___login__', 'AdminController@getLogin');
@@ -87,6 +90,9 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
     Route::get('/sections/articles/{id}', 'AdminController@listSectionArticles');
     Route::get('/categorize/{searchid}', 'AdminController@categorize');
     Route::post('/categorize/{searchid}', 'AdminController@addCategory');
+    Route::get('/comments/{searchid}', 'AdminController@getComments');
+    Route::post('/comment/reply/{commentId}', 'AdminController@postReply');
+    Route::get('/comment/delete/{commentId}', 'AdminController@deleteComment');
 
 });
 

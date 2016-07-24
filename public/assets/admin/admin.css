@@ -12,3 +12,26 @@ td {
     margin-left: 3px;
     font-size: 10px;
 }
+
+.comment-box > .row {
+    padding: 0.5em;
+    line-height: 1.2em;
+    font-weight: 400;
+    display: flex;
+}
+
+.message {
+    text-align: right;
+    padding: 1em;
+    background: rgb(230, 250, 230);
+}
+
+.reply {
+    padding: 1em;
+    text-align: left;
+    background: rgb(230, 230, 250);
+}
+
+.hidden-comment .message, .hidden-comment .reply {
+    background: rgb(230, 230, 230);
+}

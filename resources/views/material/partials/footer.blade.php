@@ -1,8 +1,8 @@
 <footer class="footer">
     <div class="container">
-        <nav class="pull-left">
+        <div class="pull-left left">
             Still Nothing Reserved
-        </nav>
+        </div>
         <div class="copyright pull-right">
             &copy; 2016, made with <i class="fa fa-heart heart"></i> by us.
         </div>

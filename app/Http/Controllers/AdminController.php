@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use FreshmanGuide\Http\Requests;
 use FreshmanGuide\Article;
 use FreshmanGuide\Section;
+use FreshmanGuide\Comment;
 use FreshmanGuide\Exceptions\AdminException;
 use Yajra\Datatables\Datatables;
 use Image;
@@ -17,7 +18,7 @@ class AdminController extends Controller
     public function getLogin() {
         return view('admin.login');
     }
-    
+
     public function sendResponse(Request $request, $data, $view = null) {
         if ($request->ajax()) {
             return response()->json($data);
@@ -52,17 +53,19 @@ class AdminController extends Controller
         return Datatables::of($articles)
             ->addColumn('action', function($article) {
                 $html = '<div class="btn-group" role="group" >' .
-                    '<a href="' . url('edit') . '/' . $article->searchid . '" class="btn btn-sm btn-primary" target="_blank" > Edit </a>' . 
-                    '<a href="' . url('admin/delete') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="delete btn btn-sm btn-danger" target="_blank" data-title="' . $article->title . '"> Delete </a>';
+                    '<a href="' . url('edit') . '/' . $article->searchid . '" class="btn btn-sm btn-primary" target="_blank" > Edit </a>' .
+                    '<a href="' . url('admin/delete') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="delete btn btn-sm btn-danger" target="_blank" data-title="' . $article->title . '"> Delete </a>' .
+                    '<a href="' . url('admin/comments') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="btn btn-sm btn-primary" target="_blank" data-title="' . $article->title . '"> Comments (' . $article->count . ') </a>';
 
                 if ($article->published) {
-                    $html .= '<a href="' . url('admin/unpublish') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="unpublish btn btn-sm btn-warning" target="_blank" data-title="' . $article->title . '"> Unpublish </a>' . '<a href="' . url('read') . '/' . $article->slug . '" data-id="' . $article->searchid . '" class="btn btn-sm btn-link" target="_blank" data-title="' . $article->title . '"> Read </a>';
+                    $html .= '<a href="' . url('admin/unpublish') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="unpublish btn btn-sm btn-warning" target="_blank" data-title="' . $article->title . '"> Unpublish </a>' .
+                    '<a href="' . url('read') . '/' . $article->slug . '" data-id="' . $article->searchid . '" class="btn btn-sm btn-success" target="_blank" data-title="' . $article->title . '"> Read </a>';
                 } else {
                     $html .= '<a href="' . url('admin/publish') . '/' . $article->searchid . '" data-id="' . $article->searchid . '" class="publish btn btn-sm btn-success" target="_blank" data-title="' . $article->title . '"> Publish </a>';
                 }
 
                 return $html . '</div>';
-                
+
             })
             ->editColumn('published', function($article) {
                 return $article->status;
@@ -180,7 +183,7 @@ class AdminController extends Controller
             ]);
         } else {
             throw new AdminException("Unable to create new section", 1);
-            
+
         }
 
     }
@@ -263,7 +266,7 @@ class AdminController extends Controller
             'article' => $article,
             'sections' => $sections,
         ], 'admin.articles.categorize');
-            
+
     }
 
     public function addCategory(Request $request, $searchid) {
@@ -288,5 +291,65 @@ class AdminController extends Controller
 
     }
 
+
+    public function getComments(Request $request, $searchid) {
+        $article = Article::where('searchid', $searchid)->first();
+        if (!$article) {
+            throw new AdminException('No such article', 0);
+        }
+
+        return $this->sendResponse($request, [
+            'article' => $article,
+            'comments' => $article->comments()->orderBy('updated_at', 'decr')->get(),
+        ], 'admin.articles.comments');
+    }
+
+
+    public function postReply(Request $request, $commentId) {
+        if ($request->input('reply') == '') {
+            return reponse()->json([
+                'success' => false,
+                'error' => 'Please enter a reply',
+            ]);
+        }
+
+        $comment = Comment::where('id', $commentId)->first();
+        if (!$comment) {
+            throw new AdminException('Comment Not Found', 0);
+        }
+
+        $comment->reply = $request->input('reply');
+        if ($comment->save()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Reply has been added'
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'error' => 'Reply can not be saved, please forgive!',
+            ]);
+        }
+    }
+
+
+    public function deleteComment(Request $request, $commentId) {
+        $comment = Comment::where('id', $commentId)->first();
+        if (!$comment) {
+            throw new AdminException('Comment Not Found', 0);
+        }
+
+        if ($comment->delete()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Comment has been deleted'
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'error' => 'Unable to delete comment, please forgive!',
+            ]);
+        }   
+    }
 
 }
