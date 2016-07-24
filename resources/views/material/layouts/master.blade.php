@@ -32,10 +32,14 @@
 
         .index-page .wrapper > .header {
             min-height: 50vh;
+            display: auto;
+            padding-bottom: 5em;
         }
 
         .index-page .wrapper > article > .header {
             min-height: 50vh;
+            display: auto;
+            padding-bottom: 5em;
         }
 
         .index-page .brand {
