@@ -190,11 +190,32 @@ class ArticleController extends Controller
             return response('There is no article to save', 404);
         }
 
-        return view('material.read', [
+        $read = $request->cookie('freshman_read');
+        $articles = '' . $article->id;
+        if ($read) {
+            $articles = explode(',', $read);
+            if (!in_array($article->id, $articles)) {
+                array_push($articles, $article->id);
+                $articles = implode(',', $articles);
+                $article->visits = $article->visits + 1;
+                $article->save();
+            } else {
+                $articles = implode(',', $articles);
+            }
+        } else {
+            $article->visits = $article->visits + 1;
+            $article->save();
+        }
+        
+
+        $response = new \Illuminate\Http\Response(view('material.read', [
             'article' => $article,
             'title' => $article->title,
             'bodyClass' => 'index-page',
-        ]);
+            'read' => $read,
+        ]));
+        $response->withCookie('freshman_read', $articles);
+        return $response;
 
     }
 

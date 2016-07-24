@@ -11,7 +11,7 @@
             <a href="{{ url('') }}">
                 <div class="logo-container">
                     <div class="logo">
-                        <img height=50 src="{{ url('images/logo.png') }}" alt="Freshman Guide Logo" rel="tooltip" title="<b>Freshman Guide</b>, you are welcome" data-placement="bottom" data-html="true">
+                        <img height=50 src="{{ url('images/logo.png') }}" alt="Freshman Guide Logo" >
                     </div>
                 </div>
             </a>

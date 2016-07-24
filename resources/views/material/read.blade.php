@@ -16,7 +16,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="brand">
                     <h2 class="article-title"> {{ $article->title }} </h2>
-                    <p class="reading-time"> <span class="words"></span> words in probable <span class="eta"></span> </p>
+                    <p class="reading-time"> <span class="words"></span> words in probably <span class="eta"></span>, read <span class="visits"> {{ $article->visits }} </span> times </p>
                 </div>
             </div>
         </div>

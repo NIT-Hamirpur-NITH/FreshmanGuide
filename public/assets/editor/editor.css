@@ -234,7 +234,7 @@
     background: rgb(230, 230, 250);
 }
 
-.eta, .words {
+.eta, .words, .visits {
     font-weight: bold;
     font-size: 1.2em;
 }
