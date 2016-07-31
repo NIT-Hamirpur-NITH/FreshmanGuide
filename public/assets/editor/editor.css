@@ -57,28 +57,31 @@
     padding: 0;
 }
 
-.main {
+.main.main-raised {
     background: rgb(250, 250, 250);
+    margin-left: 5em;
+    margin-right: 5em;
 }
 
 [data-editable] {
     overflow: auto;
     font-family: Lato, serif;
-    font-weight: 300;
-    padding: 3em;
-    font-size: 130%;
+    font-weight: 400;
+    padding: 3.5em 3em;
+    font-size: 120%;
+    text-align: justify;
+    font-family: Open Sans;
 }
 
 [data-editable] p {
     font-size: 1em;
-    line-height: 1.5em;
-    font-weight: 300;
+    line-height: 1.7em;
     color: rgb(10, 10, 20);
-    margin-bottom: 1em;
+    margin-bottom: 1.7em;
 }
 
 [data-editable] h1, [data-editable] h2 {
-    font-family: Titillium Web, sans-serif;
+    font-family: Josefin Sans, sans-serif;
     font-weight: bold;
     line-height: normal;
 } 
@@ -91,18 +94,18 @@
 
 [data-editable] h2 {
     font-size: 1.5em;
-    margin: 1em 0 1em 0;
+    margin: 1.7em 0 1.7em 0;
     font-weight: 600;
 }
 
 [data-editable] h1 + h2 {
     margin: 0;
-    margin-bottom: 1em;
+    margin-bottom: 1.7em;
 }
 
 [data-editable] h2 + h2 {
     margin: 0;
-    margin-bottom: 1em;
+    margin-bottom: 1.7em;
 }
 
 [data-editable] ul, [data-editable] ol {
@@ -115,12 +118,11 @@
     margin-bottom: 0.5em;
     font-size: 1em;
     line-height: 1.4em;
-    font-weight: 300;
     color: rgb(10, 10, 20);
 }
 
 [data-editable] li > ul, [data-editable] li > ul {
-    margin: 0.5em 0;
+    margin: 1em 0;
 } 
 
 [data-editable] li > ul li, [data-editable] li > ol li {
@@ -140,7 +142,7 @@
     font-size: 1.2em;
     font-weight: normal;
     color: white;
-    font-family: Titillium Web, sans-serif;
+    font-family: Cardo, sans-serif;
 }
 
 [data-editable] table td {
@@ -192,7 +194,7 @@
     font-weight: 400;
     line-height: normal;
     text-transform: capitalize;
-    font-family: Titillium Web, sans-serif;
+    font-family: Cardo, sans-serif;
 }
 
 

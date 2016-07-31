@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use FreshmanGuide\Http\Requests;
 use FreshmanGuide\Article;
 use FreshmanGuide\Comment;
+use FreshmanGuide\Cover;
+use Image;
 
 class ArticleController extends Controller
 {
@@ -25,7 +27,7 @@ class ArticleController extends Controller
                 'success' => false,
                 'error' => 'Please enter a title',
             ]);
-        } 
+        }
 
         $slug = \Slugify::slugify($request->input('title'));
         $article = Article::where('slug', $slug)->first();
@@ -51,7 +53,7 @@ class ArticleController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Article created',
-                'searchId' => $article->searchid, 
+                'searchId' => $article->searchid,
             ]);
         } else {
             return response()->json([
@@ -92,7 +94,7 @@ class ArticleController extends Controller
                 'success' => false,
                 'error' => 'Please enter a title',
             ]);
-        } 
+        }
 
         $slug = \Slugify::slugify($request->input('title'));
         $article = Article::where('slug', $slug)->first();
@@ -172,7 +174,7 @@ class ArticleController extends Controller
 
         if($article->save()) {
             if ($oldTitle) {
-                return response('Article saved, but please change the title', 200);    
+                return response('Article saved, but please change the title', 200);
             } else {
                 return response('Article saved', 200);
             }
@@ -182,7 +184,7 @@ class ArticleController extends Controller
 
     }
 
-    
+
     public function read(Request $request, $slug) {
 
         $article = Article::where('slug', $slug)->where('published', true)->first();
@@ -206,7 +208,7 @@ class ArticleController extends Controller
             $article->visits = $article->visits + 1;
             $article->save();
         }
-        
+
 
         $response = new \Illuminate\Http\Response(view('material.read', [
             'article' => $article,
@@ -258,5 +260,42 @@ class ArticleController extends Controller
 
     }
 
+    public function postCover(Request $request, $searchid) {
+        if (!$request->file('file')) {
+            return response()->json([
+                'success' => false,
+                'error' => "Please give an image",
+            ]);
+        }
 
+        $article = Article::where('searchid', $searchid)->first();
+
+        if (!$article) {
+            return response()->json([
+                'success' => false,
+                'error' => 'Article not found',
+            ]);
+        }
+
+        $cover = new Cover();
+        $image = $request->file('file');
+        $savePath =  '/images/articles/' . $article->id . '.' . $image->getClientOriginalExtension();
+        $image = Image::make($image);
+        $image->resize(400, 300)->save(public_path() . $savePath);
+        $cover->path = $savePath;
+        $cover->article()->associate($article);
+
+        if ($cover->save()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Cover image has been changed',
+                'path' => url($savePath),
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Unable to change the cover image, have some mercy',
+            ]);
+        }
+    }
 }

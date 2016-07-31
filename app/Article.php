@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     protected $fillable = ['user_id', 'title', 'content', 'slug'];
-    protected $appends = ['status', 'section', 'count'];
+    protected $appends = ['status', 'section', 'count', 'cover_photo'];
 
     public function sections() {
         return $this->belongsToMany(Section::class);
@@ -17,6 +17,9 @@ class Article extends Model
         return $this->hasMany(Comment::class);
     }
 
+    public function cover() {
+        return $this->hasOne(Cover::class);
+    }
 
     // custom attributes
     public function getStatusAttribute() {
@@ -38,7 +41,14 @@ class Article extends Model
 
     public function getSectionAttribute() {
         return $this->sections()->first();
+    }
 
+    public function getCoverPhotoAttribute() {
+        if ($this->cover) {
+            return url($this->cover->path);
+        } else {
+            return url('images/articles/default.jpg');
+        }
     }
 
     public function ago() {

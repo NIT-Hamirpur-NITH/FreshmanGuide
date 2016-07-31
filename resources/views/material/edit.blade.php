@@ -1,13 +1,13 @@
 @extends('material.layouts.master')
 
-@section('styles')    
+@section('styles')
     <link rel="stylesheet" type="text/css" href="{{ url('assets/editor/content-tools.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('assets/editor/editor.css') }}">
 @endsection
 
 @section('content')
 
-<div class="header header-filter header-article" style="background-image: url('{{ url('images/header.jpg') }}');">
+<div class="header header-filter header-article" style="background-image: url('{{ url($article->cover_photo) }}');">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -16,6 +16,7 @@
                     <p>
                         <button type="button" id='edit-title' class="btn btn-success btn-sm"> <i class="material-icons">create</i> Edit Title  </button>
                         <a id="comment" href="#commentModal"  type="button" class="btn btn-info btn-sm"> <i class="material-icons">comment</i> Comment  </a>
+                        <a class="btn btn-primary btn-sm" id="cover" href="#coverModal" title="Change Cover Photo"> <i class="material-icons">add_a_photo</i> Cover </a>
                     </p>
                 </div>
             </div>
@@ -58,14 +59,14 @@
             </h2>
             <p>
                 Each article has a unique ID, if you know the id, then you can edit the article. Just use the exact same URL in the location bar to edit. We will be adding some better functionality later.
-            </p> 
+            </p>
 
 
             @else
 
                 {!! $article->content !!}
 
-            @endif    
+            @endif
         </div>
         <div class="grain">
             <i class="material-icons">grain</i>
@@ -77,14 +78,24 @@
 
 
 <div id="commentModal">
-    <div class="close-commentModal btn-close-modal" > 
+    <div class="close-commentModal btn-close-modal" >
         <button class="btn btn-danger"> <i class="material-icons">clear</i> Close </button>
     </div>
-        
+
     <div class="modal-content">
         @include('material.partials.comments')
     </div>
+</div>
 
+
+<div id="coverModal">
+    <div class="close-coverModal btn-close-modal" >
+        <button class="btn btn-danger"> <i class="material-icons">clear</i> Close </button>
+    </div>
+
+    <div class="modal-content">
+        <input id="fileupload" type="file" name="file" data-url="{{ url('cover/' . $article->searchid) }}">
+    </div>
 </div>
 
 
@@ -97,6 +108,8 @@
     window.articleID = "{{ $article->searchid }}";
     console.log(appURL);
 </script>
+<script src="{{ url('assets/bower/jquery-ui/jquery-ui.min.js') }}" type="text/javascript"></script>
+<script src="{{ url('assets/bower/blueimp-file-upload/js/jquery.fileupload.js') }}" type="text/javascript"></script>
 <script src="{{ url('assets/editor/content-tools.min.js') }}" type="text/javascript"></script>
 <script src="{{ url('assets/editor/editor.js') }}" type="text/javascript"></script>
 @endsection

@@ -30,7 +30,7 @@
                     </a>
                 </li>
                 <li>
-                    <a id="add-article" href="javascript:void(0)" title="Add artilces" alt='Add articles'>
+                    <a id="add-article" href="javascript:void(0)" title="Add artilces" alt='Add new article'>
                         <i class="material-icons">add_box</i> Add
                     </a>
                 </li>

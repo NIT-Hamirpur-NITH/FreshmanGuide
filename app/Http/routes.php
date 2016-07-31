@@ -43,20 +43,19 @@ Route::get('/details', function() {
     return view('details');
 });
 
-    
 // Read the articles
 Route::get('/read/{slug}', 'ArticleController@read');
 
 /**
  * Article addition routes
  */
-
 Route::get('/add', 'ArticleController@add');
 Route::post('/add', 'ArticleController@create');
 Route::get('/edit/{searchid}', 'ArticleController@edit');
 Route::post('/save/{searchid}', 'ArticleController@save');
 Route::post('/title/{searchid}', 'ArticleController@titleChange');
 Route::post('/comment/{searchid}', 'ArticleController@addComment');
+Route::post('/cover/{searchid}', 'ArticleController@postCover');
 
 // handling image uplaods
 Route::post('/image/upload', 'ImageController@upload');

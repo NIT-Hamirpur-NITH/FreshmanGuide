@@ -17,14 +17,24 @@
 
 <div class="main main-raised">
     <div class="container">
-        <ul class="list-unstyled articles-list">
-        @foreach ($articles as $a)
-            <li>
-                <a class="article-link" href="{{ url('/read/') . '/' . $a->slug }}"> <i class="material-icons">fast_forward</i> {{ $a->title }} </a>
-                <span class="published"> &nbsp; (Updated :  {{ $a->ago() }}) </span>
-            </li>
-        @endforeach
-        </ul>
+        <section class="tiles">
+        @if (count($articles) == 0)
+            <h4 class="center"> Nothing to show here ...... </h4>
+        @endif
+        @for ($i = 0; $i < count($articles); ++$i)
+            <article class="style{{ ($i%6) + 1 }}">
+                <span class="image">
+                    <img src={{ url($articles[$i]->cover_photo) }} alt="Section image" />
+                </span>
+                <a href="{{ url('read') . '/' . $articles[$i]->slug }}">
+                    <h3 style="color: #FDD; font-weight: bold;">{{ $articles[$i]->title }}</h3>
+                    <div class="content">
+                        (Updated :  {{ $articles[$i]->ago() }})
+                    </div>
+                </a>
+            </article>
+        @endfor
+        </section>
     </div>
 </div>
 @endsection

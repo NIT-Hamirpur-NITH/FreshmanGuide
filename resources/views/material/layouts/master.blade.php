@@ -13,8 +13,8 @@
 
     <!--     Fonts and icons     -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,300i,400,400i,600,600i,700,700i" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700,700i|Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
 
     <!-- CSS Files -->
@@ -51,13 +51,12 @@
 </head>
 
 <body class="{{ $bodyClass }}">
-    
+
     @include('material.partials.nav');
 
     <div class="wrapper">
 
         @yield('content')
-    
 
         @include('material.partials.footer')
 
@@ -69,7 +68,7 @@
         <div class="close-articlesModal btn-close-modal" > 
             <button class="btn btn-danger"> <i class="material-icons">clear</i> Close </button>
         </div>
-            
+
         <div class="modal-content">
             @include('material.partials.articles-nav')
         </div>

@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1 class="title">Welcome Freshman !!</h1>
+                <h1 class="title">Welcome Freshman !</h1>
                 <p>Every landing page needs a small description after the big bold title, that's why we added this text here. Add here all the information that can make you or your product create the first impression.</p>
                 <br />
                 <a href="{{ url('sections') }}" class="btn btn-danger btn-raised btn-lg">

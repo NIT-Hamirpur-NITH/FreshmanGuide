@@ -56,7 +56,7 @@ body.inverse .card .form-control {
 }
 
 body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
   font-weight: 300;
   line-height: 1.5em;
 }
@@ -3553,7 +3553,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   opacity: 0;
 }
 
-.wrapper > .header {
+.wrapper > .header, .wrapper > article > .header {
   min-height: 300px;
   background-position: center center;
   background-size: cover;

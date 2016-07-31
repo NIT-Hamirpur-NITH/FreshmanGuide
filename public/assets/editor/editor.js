@@ -1,8 +1,6 @@
 'use strict';
 
-
 function changeTitle() {
-
     vex.dialog.prompt({
       message: 'Enter new title',
       placeholder: 'My new and awesome title',
@@ -20,13 +18,10 @@ function changeTitle() {
             notify(text, type);
         })
         .fail(function(xhr) {
-            notify('Unable to save new title, please forgive!', 'error'); 
+            notify('Unable to save new title, please forgive!', 'error');
         });
       }
     });
-
-
-
 }
 
 function addComment() {
@@ -53,19 +48,15 @@ function addComment() {
                 notify(text, type);
             })
             .fail(function() {
-                notify('Unable to save your comment, please forgive!', 'error'); 
+                notify('Unable to save your comment, please forgive!', 'error');
             });
         }
     });
-
 }
 
 $(function() {
-
-
     // change title
     $('#edit-title').click(changeTitle);
-
 
     var editor;
     editor = ContentTools.EditorApp.get();
@@ -115,7 +106,7 @@ $(function() {
     function imageUploader(dialog) {
 
         var image, xhr, xhrComplete, xhrProgress;
-       
+
         dialog.addEventListener('imageuploader.cancelupload', function () {
             // Cancel the current upload
 
@@ -331,16 +322,37 @@ $(function() {
         color: 'rgba(255, 255, 255, 1)',
         // Callbacks
         beforeOpen: function() {
-            
-        },           
+
+        },
         afterOpen: function() {
-            
-        }, 
+
+        },
         beforeClose: function() {
-            
-        }, 
+
+        },
         afterClose: function() {
-            
+
+        }
+    });
+
+
+    $('#cover').animatedModal({
+        modalTarget:'coverModal',
+        animatedIn:'lightSpeedIn',
+        animatedOut:'bounceOutDown',
+        color: 'rgba(255, 255, 255, 1)',
+        // Callbacks
+        beforeOpen: function() {
+
+        },
+        afterOpen: function() {
+
+        },
+        beforeClose: function() {
+
+        },
+        afterClose: function() {
+
         }
     });
 
@@ -348,7 +360,7 @@ $(function() {
 
     $('form[name=comment-form]').submit(function(event) {
         event.preventDefault();
-        
+
         var $form = $(this);
         var $messageBox = $('.comment-box');
         console.log($form.find('textarea[name=message]').val());
@@ -372,12 +384,31 @@ $(function() {
             notify(text, type);
         })
         .fail(function() {
-            notify('Unable to save new title, please forgive!', 'error'); 
+            notify('Unable to save new title, please forgive!', 'error');
         });
 
     });
 
     $('.remove-comment').click(removeComment);
+
+
+    // upload cove
+    $('#fileupload').fileupload({
+      dataType: 'json',
+      done: function(e, val) {
+        console.log(val);
+        var data = val._response.result;
+        var type = data.success ? 'success' : 'error';
+        var text = data.success ? data.message : data.error;
+        if (data.success) {
+            $('.header.header-filter.header-article').css('backgroundImage', 'url("' + data.path + '?_ignore=' + Date.now() + '")');
+        }
+        notify(text, type);
+      },
+      fail: function(e, data) {
+        notify('Unable to change cover photo, show mercy!', 'error');
+      },
+    });
 
 });
 
@@ -397,7 +428,7 @@ function removeComment(event) {
         notify(text, type);
     })
     .fail(function() {
-        notify('Unable to remove comment, show mercy!', 'error'); 
+        notify('Unable to remove comment, show mercy!', 'error');
     });
 
 }

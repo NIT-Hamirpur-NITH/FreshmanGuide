@@ -17,7 +17,7 @@
         </div> 
 
         <div data-editable data-name='content'>
-            
+
             @if ($article->content == '')
                 No content, sorry
             @else

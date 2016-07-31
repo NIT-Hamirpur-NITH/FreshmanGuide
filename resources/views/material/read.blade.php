@@ -9,8 +9,7 @@
 @section('content')
 
 <article>
-    
-<div class="header header-filter" style="background-image: url('{{ url('images/header.jpg') }}');">
+<div class="header header-filter header-article" style="background-image: url('{{ url($article->cover_photo) }}');">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -26,14 +25,13 @@
 
 <div class="main main-raised">
     <div class="container">
-        <div data-editable data-name='content'>      
+        <div data-editable data-name='content'>
             {{-- <p><small><span class="eta"></span> (<span class="words"></span> words)</small></p>     --}}
             @if ($article->content == '')
                 No content, sorry
             @else
                 {!! $article->content !!}
-
-            @endif    
+            @endif
         </div>
     </div>
 </div>
