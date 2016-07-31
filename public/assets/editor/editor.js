@@ -84,7 +84,7 @@ $(function() {
         }
 
         // extract the title and add to the payload
-        payload.title = $('#title').text().trim();
+        
         console.log(payload);
 
         $.post(window.appURL + '/save/' + window.articleID, payload)
@@ -408,6 +408,17 @@ $(function() {
       fail: function(e, data) {
         notify('Unable to change cover photo, show mercy!', 'error');
       },
+      progressall: function (e, data) {
+        $('#progress .bar').css(
+            'width',
+            '0'
+        );
+        var progress = parseInt(data.loaded / data.total * 100, 10);
+        $('#progress .bar').css(
+            'width',
+            progress + '%'
+        );
+      }
     });
 
 });

@@ -3,6 +3,12 @@
 @section('styles')
     <link rel="stylesheet" type="text/css" href="{{ url('assets/editor/content-tools.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('assets/editor/editor.css') }}">
+    <style type="text/css">
+        .bar {
+            height: 18px;
+            background: green;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -95,6 +101,9 @@
 
     <div class="modal-content">
         <input id="fileupload" type="file" name="file" data-url="{{ url('cover/' . $article->searchid) }}">
+        <div id="progress">
+            <div class="bar" style="width: 0%;"></div>
+        </div>
     </div>
 </div>
 
@@ -110,6 +119,6 @@
 </script>
 <script src="{{ url('assets/bower/jquery-ui/jquery-ui.min.js') }}" type="text/javascript"></script>
 <script src="{{ url('assets/bower/blueimp-file-upload/js/jquery.fileupload.js') }}" type="text/javascript"></script>
-<script src="{{ url('assets/editor/content-tools.min.js') }}" type="text/javascript"></script>
+<script src="{{ url('assets/editor/content-tools.js') }}" type="text/javascript"></script>
 <script src="{{ url('assets/editor/editor.js') }}" type="text/javascript"></script>
 @endsection

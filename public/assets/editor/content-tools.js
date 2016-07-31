@@ -3901,7 +3901,7 @@
       if (this.a) {
         attributes = ContentEdit.attributesToString(this.a);
         attributes = "" + attributes + " data-ce-tag=\"img\"";
-        return ("" + indent + "<a " + attributes + ">\n") + ("" + ContentEdit.INDENT + img + "\n") + ("" + indent + "</a>");
+        return ("" + indent + "<a target='_blank'" + attributes + ">\n") + ("" + ContentEdit.INDENT + img + "\n") + ("" + indent + "</a>");
       } else {
         return img;
       }
