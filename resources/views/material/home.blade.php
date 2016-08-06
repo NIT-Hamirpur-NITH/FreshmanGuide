@@ -1,7 +1,7 @@
 @extends('material.layouts.master')
 
 @section('content')
-<div class="header header-filter" style="background-image: url('{{ url('images/header.jpg') }}');">
+<div class="header header-filter" style="background-image: url('{{ url('images/front.jpg') }}');">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
