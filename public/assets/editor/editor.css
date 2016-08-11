@@ -84,7 +84,7 @@
     font-family: Josefin Sans, sans-serif;
     font-weight: bold;
     line-height: normal;
-} 
+}
 
 [data-editable] h1 {
     font-size: 1.8em;
@@ -123,7 +123,7 @@
 
 [data-editable] li > ul, [data-editable] li > ul {
     margin: 1em 0;
-} 
+}
 
 [data-editable] li > ul li, [data-editable] li > ol li {
     margin: 0;
@@ -159,8 +159,8 @@
     background: #FDF;
 }
 
-[data-editable] img + p {
-    margin-top: 1em;
+[data-editable] img + p, [data-editable] img + h1, [data-editable] img + h2, [data-editable] img + ul, [data-editable] img + ol {
+    padding-top: 1em;
 }
 
 .grain {
@@ -214,7 +214,7 @@
 .comment-box {
     padding: 1em;
     /*background: rgb(238,238, 238);*/
-    
+
 }
 
 .comment-box > .row {
@@ -239,4 +239,22 @@
 .eta, .words, .visits {
     font-weight: bold;
     font-size: 1.2em;
+}
+
+
+@media (max-width: 768px) {
+  .main.main-raised {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  [data-editable] {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 14px;
+  }
+
+  h1 + img, h2 + img {
+    margin-bottom: 2px;
+  }
 }
