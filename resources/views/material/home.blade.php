@@ -29,6 +29,10 @@
             </div>
         </div>
 
+        {{-- Google Map snippet --}}
+        <div class="section section-landing text-center">
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1Fo0vVknWpz1n4QpxGovAOsYaR8U" width="85%" height="600px"></iframe>
+        </div>
 
         <div class="section landing-section">
             <div class="row">
