@@ -1,12 +1,32 @@
 @extends('material.layouts.master')
 
+@section('styles')
+  <style>
+    h5.description {
+      text-align: justify;
+      line-height: 1.7em;
+    }
+
+    .section-landing > .row > div {
+      margin-left: 10%;
+      width: 80%;
+    }
+  </style>
+@endsection
+
 @section('content')
 <div class="header header-filter" style="background-image: url('{{ url('images/front.jpg') }}');">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <h1 class="title">Welcome Freshman !</h1>
-                <p>Every landing page needs a small description after the big bold title, that's why we added this text here. Add here all the information that can make you or your product create the first impression.</p>
+                <p>
+                  If you were here before, I don't know why you are reading this again. <br>
+                  If you were not, where were you? Really!! What mountains where you climbing? <br>
+                  Anyways now that you are here, you are welcome. And we know why you are here,
+                  just click on the button below to begin your journey
+                  or maybe read the introduction below if you care.
+                </p>
                 <br />
                 <a href="{{ url('sections') }}" class="btn btn-danger btn-raised btn-lg">
                     <i class="fa fa-play"></i> Start Knowing
@@ -22,57 +42,46 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <h2 class="title">About NITH</h2>
-                    <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see more.</h5>
-                    <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see more.</h5>
-                    <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see more.</h5>
+                    <h5 class="description">
+                      Hi, there. <br> <br>
+                      There are only three reasons why you could be here: <br />
+                      1. You deserve to get into IIT, but life gave you lemons. Welcome to the best bargain you could’ve wished for.
+                         Read why IIT Competition Keeda shouldn't matter anymore and other things you need to know as freshman, here. <br>
+                      2. You thought it snowed in the college, and hence you have stumbled upon here,
+                         by the virtue of this page belonging about the college. <br>
+                      3. You’ve heard about the guide’s pure awesomeness. </br>
+                      </br>
+                      Whatever the reason, you’ve finally arrived, and that is what matters. Before we go any further check this map and
+                      make sure you are in the right place.</br>
+                    </h5>
+
+                    {{-- Google Map snippet --}}
+                    <div class="section section-landing text-center">
+                        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1Fo0vVknWpz1n4QpxGovAOsYaR8U" width="85%" height="600px"></iframe>
+                    </div>
+
+                    <h5 class="description">
+                      Now, whether we know it or not, each one of us encounters a point in life where we stop, and think the question that mankind has
+                      pondered upon ever since learning to make fire – ‘What are we doing here? And where are we headed?’ <br> <br>
+                      In the moments of such deep thought, fret not. For the first time in ages, we have put down on paper what has,
+                      till now, only been passed as word of mouth. While not intending for it to be a ‘Guide to being an NITHian’,
+                      if the regular freshmen were to treat it as such, it would bring tears to the makers’ eyes. <br> <br>
+                      Legend tells of a legendary place, in the relatively colder western lower regions of the legendary Himalayas. <br> <br>
+                      Legend has it that this place remained the stuff of legends until 1986 A.D. when it was established
+                      as Regional Engineering College, Hamirpur. After that the legend transcended itself, by becoming, ledendary!
+                      Since then, many legends have gone through its scenic jungles, dusty laboratories and hallowed halls.
+                      And now, these legends bring to you the fastest and the most effective ways to achieve just that – their “legendariness” and saviness.
+                      And there's another legend that was created with the creation of this guide: <br> <br>
+                      The Legend of The Unknown Creators, i.e. , one would never know who exactly were/are the persons
+                      who worked / work to make this guide a reality.
+                      Your backtracking skills could give you rumors, but they would never give you surety.
+                      It is our sincere hope that, this guide shall serve as a beacon to all those who come here with curiousity
+                      about the legendary ‘Hamirpur’ and everyone else who has come here for fun. <br> <br>
+                    </h5>
+                  </div>
                 </div>
             </div>
         </div>
-
-        {{-- Google Map snippet --}}
-        <div class="section section-landing text-center">
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1Fo0vVknWpz1n4QpxGovAOsYaR8U" width="85%" height="600px"></iframe>
-        </div>
-
-        <div class="section landing-section">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h2 class="text-center title">Work with us</h2>
-                    <h4 class="text-center description">Divide details about your product or agency work into parts. Write a few lines about each one and contact us about any further collaboration. We will responde get back to you in a couple of hours.</h4>
-                    <form class="contact-form">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group label-floating">
-                                    <label class="control-label">Your Name</label>
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group label-floating">
-                                    <label class="control-label">Your Email</label>
-                                    <input type="email" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group label-floating">
-                            <label class="control-label">Your Messge</label>
-                            <textarea class="form-control" rows="4"></textarea>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-4 col-md-offset-4 text-center">
-                                <button class="btn btn-primary btn-raised">
-                                    Send Message
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-
     </div>
 </div>
 @endsection
