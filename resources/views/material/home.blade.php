@@ -43,16 +43,15 @@
                 <div class="col-md-8 col-md-offset-2">
                     <h2 class="title">About NITH</h2>
                     <h5 class="description">
-                      Hi, there. <br> <br>
+                      Hi, There! <br> <br>
                       There are only three reasons why you could be here: <br />
-                      1. You deserve to get into IIT, but life gave you lemons. Welcome to the best bargain you could’ve wished for.
-                         Read why IIT Competition Keeda shouldn't matter anymore and other things you need to know as freshman, here. <br>
-                      2. You thought it snowed in the college, and hence you have stumbled upon here,
-                         by the virtue of this page belonging about the college. <br>
+                      1. You deserve to get into an IIT, but life gave you lemons. Welcome to the best bargain you could’ve wished for.
+                         Read why IIT Competition Keeda shouldn't matter anymore and other things you need to know as a freshman, <a href="https://www.quora.com/What-are-some-of-the-things-that-a-freshman-needs-to-know-when-they-enter-into-NIT-Hamirpur" target="_blank">here</a>. <br>
+                      2. You thought it snowed in the college, and you have stumbled upon here,
+                         by the virtue of you feeling deceived and having nothing better to do. <br>
                       3. You’ve heard about the guide’s pure awesomeness. </br>
                       </br>
-                      Whatever the reason, you’ve finally arrived, and that is what matters. Before we go any further check this map and
-                      make sure you are in the right place.</br>
+                      Whatever the reason, you’ve finally arrived, and that is what matters. Before we go any further check out this map that a computer science student put for you so generously.</br>
                     </h5>
 
                     {{-- Google Map snippet --}}
@@ -62,21 +61,21 @@
 
                     <h5 class="description">
                       Now, whether we know it or not, each one of us encounters a point in life where we stop, and think the question that mankind has
-                      pondered upon ever since learning to make fire – ‘What are we doing here? And where are we headed?’ <br> <br>
-                      In the moments of such deep thought, fret not. For the first time in ages, we have put down on paper what has,
-                      till now, only been passed as word of mouth. While not intending for it to be a ‘Guide to being an NITHian’,
-                      if the regular freshmen were to treat it as such, it would bring tears to the makers’ eyes. <br> <br>
-                      Legend tells of a legendary place, in the relatively colder western lower regions of the legendary Himalayas. <br> <br>
+                      pondered upon ever since learning to make fire – <i>‘What are we doing here? And where are we headed?’</i> <br> <br>
+                      In the moments of such deep thought(s), fret not. For the first time in ages, we have put down on paper what has,
+                      till now, only been passed as word of mouth. While not intending for it to be a <i>‘Guide to being an NITHian’</i>,
+                      if the freshmen were to treat it as such, it would bring tears to the makers’ eyes. <br> <br>
+                      Legend tells of a legendary place, in the relatively colder, lower western regions of the legendary Himalayas. <br> <br>
                       Legend has it that this place remained the stuff of legends until 1986 A.D. when it was established
                       as Regional Engineering College, Hamirpur. After that the legend transcended itself, by becoming, ledendary!
                       Since then, many legends have gone through its scenic jungles, dusty laboratories and hallowed halls.
                       And now, these legends bring to you the fastest and the most effective ways to achieve just that – their “legendariness” and saviness.
                       And there's another legend that was created with the creation of this guide: <br> <br>
-                      The Legend of The Unknown Creators, i.e. , one would never know who exactly were/are the persons
+                      <b>The Legend of The Unknown Creators</b>. It states that one would never know who exactly were/are the persons
                       who worked / work to make this guide a reality.
                       Your backtracking skills could give you rumors, but they would never give you surety.
                       It is our sincere hope that, this guide shall serve as a beacon to all those who come here with curiousity
-                      about the legendary ‘Hamirpur’ and everyone else who has come here for fun. <br> <br>
+                      about the legendary <b>'Mirpur</b> and everyone else who has come here for fun. <br> <br>
                     </h5>
                   </div>
                 </div>
