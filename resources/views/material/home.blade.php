@@ -51,7 +51,7 @@
                          by the virtue of you feeling deceived and having nothing better to do. <br>
                       3. You’ve heard about the guide’s pure awesomeness. </br>
                       </br>
-                      Whatever the reason, you’ve finally arrived, and that is what matters. Before we go any further check out this map that a computer science student put it for you so generously.</br>
+                      Whatever the reason, you’ve finally arrived, and that is what matters. Before we go any further check out this map that a computer science student put for you so generously.</br>
                     </h5>
 
                     {{-- Google Map snippet --}}
