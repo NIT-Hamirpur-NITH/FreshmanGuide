@@ -55,7 +55,7 @@
     @include('admin.partials.datatableJS')
     <script>
         window.appURL = "{!! url('') !!}";
-        window.sections = JSON.parse('{!! $sections !!}');
+        window.sections = JSON.parse('{!! addslashes($sections) !!}');
 
         $(function() {
             window.table = $('#articles-table').DataTable({
