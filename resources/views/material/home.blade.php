@@ -41,7 +41,7 @@
         <div class="section text-center section-landing">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h2 class="title">About NITH</h2>
+                    <h2 class="title">About This URL Location</h2>
                     <h5 class="description">
                       Hi, There! <br> <br>
                       There are only three reasons why you could be here: <br />
