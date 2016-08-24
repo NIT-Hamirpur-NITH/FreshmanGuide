@@ -4,7 +4,7 @@
             Still Nothing Reserved
         </div>
         <div class="copyright pull-right">
-            &copy; 2016, made with <i class="fa fa-heart heart"></i> by us.
+            Made with <i class="fa fa-heart heart"></i> by us.
         </div>
     </div>
 </footer>
