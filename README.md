@@ -1,13 +1,13 @@
-========================
-NITH Freshmen Guide
-========================
+# NITH Freshmen Guide
 
 This is a repository to store the website that is intended to be used by a fresher at NITH.
 The website is under construction and will soon reach a alpha phase.
 
-
 [![Join the chat at https://gitter.im/Nithmr/FreshmanGuide](https://badges.gitter.im/Nithmr/FreshmanGuide.svg)](https://gitter.im/Nithmr/FreshmanGuide?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-=======
+## Demo
+The project is hosted [Here](https://glug.nith.ac.in/freshman)
+
+## Installations
 To setup the development environment for the project, follow the instructions given below.
 
 First of all, you need to install [Laravel](https://laravel.com) to run this project on your localhost.
