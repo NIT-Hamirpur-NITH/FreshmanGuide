@@ -35,8 +35,8 @@
     "Content-Length": "8681",
     "Content-Type": "application/zip; charset=utf-8"
   },
-  "_source": "https://npmcdn.com/headroom.js/bower.zip",
+  "_source": "https://unpkg.com/headroom.js/bower.zip",
   "_target": "*",
-  "_originalSource": "https://npmcdn.com/headroom.js/bower.zip",
+  "_originalSource": "https://unpkg.com/headroom.js/bower.zip",
   "_direct": true
 }

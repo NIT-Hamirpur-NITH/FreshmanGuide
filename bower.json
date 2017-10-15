@@ -28,7 +28,7 @@
     "datatables": "^1.10.12",
     "vex": "^2.3.4",
     "responsive-nav": "^1.0.39",
-    "headroom.js": "https://npmcdn.com/headroom.js/bower.zip",
+    "headroom.js": "https://unpkg.com/headroom.js/bower.zip",
     "animate.css": "^3.5.2",
     "toastr": "^2.1.2",
     "blockUI": "*",
